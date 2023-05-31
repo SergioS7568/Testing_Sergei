@@ -138,7 +138,7 @@ if uploaded_file is not None:
     resized = cv2.resize(opencv_image,(28, 28))
     # Now do something with the image! For example, let's display it:
     st.image(opencv_image, channels="RGB")
-
+    Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
     
@@ -154,10 +154,11 @@ def prepare(filepath):
     print(x.dtype) 
     x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
     x = tf.cast(x,tf.float32)
-    Genrate_pred = st.button("Generate Prediction")
     print(x.dtype)
+    
+    
     if Genrate_pred:
-        prediction = loaded_model.predict([img_reshape]).argmax()
+        prediction = loaded_model.predict([x]).argmax()
         st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
 
     
