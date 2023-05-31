@@ -12,7 +12,6 @@ charset-normalizer
 
  click
  
- cudatoolkit==11.8.0
 
 fastapi
 
