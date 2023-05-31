@@ -147,7 +147,7 @@ if uploaded_file is not None:
  
 
 
-   img_reshape = tf.cast(img_reshape,tf.float32)
+   img_reshape = tf.cast(tf.float32)
     print(img_reshape.dtype)
     
     
