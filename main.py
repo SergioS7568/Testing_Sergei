@@ -142,13 +142,27 @@ if uploaded_file is not None:
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
     
-    img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
-    img_reshape = tf.cast(img_reshape,tf.float32)
-  
+    
+    
+def prepare(filepath):
+    img_array = cv2.imdecode(file_bytes, 1)
+    new_array = cv2.resize(opencv_image, (28, 28))
+    arr=new_array.reshape(-1, 28, 28, 3)
+    return arr
+   
+    
+    x=prepare('img.jpg')
+    x = tf.keras.utils.normalize(x, axis=1)
+    x = x.astype('float32') 
+    print(x.dtype) 
+    x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
+    x = tf.cast(x,tf.float32)
+    print(x.dtype) 
+  rediction = model.predict([x])
 
-    Genrate_pred = st.button("Generate Prediction")
-    if Genrate_pred:
-       prediction = loaded_model.predict(img_reshape).argmax()
-       st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
+   # Genrate_pred = st.button("Generate Prediction")
+   # if Genrate_pred:
+       #prediction = loaded_model.predict(img_reshape).argmax()
+      # st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
 
 
