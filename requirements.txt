@@ -13,8 +13,6 @@ flatbuffers==23.5.26
 gast==0.4.0
 gitdb==4.0.10
 GitPython==3.1.31
-google-auth==2.19.0
-google-auth-oauthlib==1.0.0
 google-pasta==0.2.0
 grpcio==1.54.2
 h5py==3.8.0
@@ -35,7 +33,7 @@ opencv-contrib-python
 packaging==23.1
 Pillow==9.5.0
 pip ==23.1.2
-protobuf==3.18.0
+protobuf==3.19.6
 pyasn1==0.5.0
 pyasn1-modules==0.3.0
 Pygments==2.15.1
@@ -52,7 +50,7 @@ smmap==5.0.0
 tenacity==8.2.2
 tensorboard
 tensorboard-data-server==0.7.0
-tensorflow
+tensorflow==2.12.1
 tensorflow-estimator==2.12.0
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.3.0
