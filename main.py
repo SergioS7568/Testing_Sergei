@@ -142,13 +142,14 @@ if uploaded_file is not None:
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
     
-    img_array = cv2.imdecode(file_bytes, 1)
-    new_array = cv2.resize(opencv_image, (28, 28))
+def prepare(filepath):
+    opencv_image = cv2.imdecode(file_bytes, 1)
+    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
     arr=new_array.reshape(-1, 28, 28, 3)
-    
-    
-    
-    x = tf.keras.utils.normalize(arr, axis=1)
+    return arr
+
+    x=prepare('img.jpg')
+    x = tf.keras.utils.normalize(x, axis=1)
     x = x.astype('float32') 
     print(x.dtype) 
     x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
