@@ -11,7 +11,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 
 
 from keras.models import load_model
-model = load_model('saved_model/mdl_ws.hdf5')
+model = load_model("saved_model/mdl_ws.hdf5")
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
 
