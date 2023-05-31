@@ -147,8 +147,8 @@ if uploaded_file is not None:
     arr=new_array.reshape(-1, 28, 28, 3)
     
     
-    x= arr
-    x = tf.keras.utils.normalize(x, axis=1)
+    
+    x = tf.keras.utils.normalize(arr, axis=1)
     x = x.astype('float32') 
     print(x.dtype) 
     x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
