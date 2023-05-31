@@ -1,5 +1,5 @@
 
-absl-py==1.0.0 
+absl-py==0.10
 
 astunparse==1.6.3 
 
