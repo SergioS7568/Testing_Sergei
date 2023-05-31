@@ -1,4 +1,5 @@
-pip ==  23.1.2
+pip
+opencv-python
 numpy
 cv2
 streamlit
