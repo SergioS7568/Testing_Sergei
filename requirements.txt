@@ -11,6 +11,8 @@ certifi
 charset-normalizer
 
  click
+ 
+ cudatoolkit
 
 fastapi
 
