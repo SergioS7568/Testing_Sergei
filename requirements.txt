@@ -12,7 +12,7 @@ charset-normalizer
 
  click
  
-cv2
+
 
 fastapi
 
@@ -40,6 +40,8 @@ keras-preprocessing
  markdown
 
 numpy
+
+opencv-python-headless
 
 oauthlib
 
