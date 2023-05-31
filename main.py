@@ -158,7 +158,7 @@ def prepare(filepath):
     x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
     x = tf.cast(x,tf.float32)
     print(x.dtype) 
-  rediction = model.predict([x])
+  prediction = model.predict([x])
 
    # Genrate_pred = st.button("Generate Prediction")
    # if Genrate_pred:
