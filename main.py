@@ -144,7 +144,7 @@ if uploaded_file is not None:
 
     Genrate_pred = st.button("Generate Prediction")
     if Genrate_pred:
-       prediction = loaded_model.predict(img_reshape(None, 28, 28, 3)).argmax()
+       prediction = loaded_model.predict(img_reshape).argmax(None, 28, 28, 3)
        st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
 
 
