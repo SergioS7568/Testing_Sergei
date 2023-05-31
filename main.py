@@ -145,7 +145,9 @@ if uploaded_file is not None:
     img_array = cv2.imdecode(file_bytes, 1)
     new_array = cv2.resize(opencv_image, (28, 28))
     arr=new_array.reshape(-1, 28, 28, 3)
-
+    
+    
+    x= arr
     x = tf.keras.utils.normalize(x, axis=1)
     x = x.astype('float32') 
     print(x.dtype) 
