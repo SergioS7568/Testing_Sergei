@@ -28,7 +28,7 @@ Markdown==3.4.3
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
 mdurl==0.1.2
-numpy=1.22
+numpy==1.22
 oauthlib==3.2.2
 opencv-python
 opencv-contrib-python
