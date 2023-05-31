@@ -65,6 +65,7 @@ requests-oauthlib
 six
 
 starlette
+streamlib
 
  tensorboard
  
