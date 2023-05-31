@@ -28,7 +28,7 @@ Markdown==3.4.3
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
 mdurl==0.1.2
-numpy==1.19.0
+numpy==1.19.2
 oauthlib==3.2.2
 opt-einsum==3.3.0
 packaging==23.1
@@ -52,7 +52,7 @@ six==1.15.0
 tenacity==8.2.2
 tensorboard==2.5.0
 tensorflow==2.5.0
-typing-extensions==3.10.0.2
+typing-extensions==4.6.2
 tensorflow-estimator==2.5.0rc0
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==1.1.0
