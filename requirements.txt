@@ -74,9 +74,9 @@ streamlit
 
  tensorboard-plugin-wit
 
- tensorflow
+#tensorflow
  
- 
+ tensorflow-cpu
  
  
  
