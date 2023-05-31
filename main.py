@@ -154,8 +154,8 @@ def prepare(filepath):
     print(x.dtype) 
     x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
     x = tf.cast(x,tf.float32)
-    print(x.dtype)
     Genrate_pred = st.button("Generate Prediction")
+    print(x.dtype)
     if Genrate_pred:
         prediction = loaded_model.predict([x]).argmax()
         st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
