@@ -141,6 +141,10 @@ if uploaded_file is not None:
 
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
+    
+    img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
+    img_reshape = tf.cast(img_reshape,tf.float32)
+  
 
     Genrate_pred = st.button("Generate Prediction")
     if Genrate_pred:
