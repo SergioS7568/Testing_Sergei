@@ -146,8 +146,8 @@ if uploaded_file is not None:
 
     if Genrate_pred:
         prediction = loaded_model.predict([img_reshape.reshape(-1, 28, 28, 1)])
-        st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
-        
+        st.title(predictions)
+
         
 
 
