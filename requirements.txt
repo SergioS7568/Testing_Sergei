@@ -7,7 +7,7 @@ cachetools==4.2.4
 
 certifi==2021.10.8 
 
-charset-normalizer=2.0.9
+charset-normalizer==2.0.9
 
  click==7.1.2 
 
@@ -15,11 +15,11 @@ fastapi==0.63.0
 
  gast==0.3.3 
 
-google-auth==2.3.3 g
+google-auth==2.3.3 
 
 
 
-oogle-auth-oauthlib==0.4.6 
+google-auth-oauthlib==0.4.6 
 google-pasta=0.2.0 
 
 grpcio==1.42.0 
