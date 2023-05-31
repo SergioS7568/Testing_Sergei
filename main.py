@@ -147,10 +147,10 @@ if uploaded_file is not None:
  
 
 
-   img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)
+   img_reshape = tf.keras.utils.normalize(axis=1)
     img_reshape =img_reshape.astype('float32') 
     print(img_reshape.dtype) 
-    img_reshape= tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
+    img_reshape= tf.keras.utils.normalize(axis=1)  # x becomes a tensor
    img_reshape = tf.cast(img_reshape,tf.float32)
     print(img_reshape.dtype)
     
