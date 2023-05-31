@@ -142,9 +142,13 @@ if uploaded_file is not None:
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
     
+def prepare(filepath):
+    opencv_image = cv2.imdecode(file_bytes, 1)
+    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
+    arr=new_array.reshape(-1, 28, 28, 3)
+    return arr
 
-
-    x=prepare('img.jpg')
+    x=prepare('opencv_image')
     x = tf.keras.utils.normalize(x, axis=1)
     x = x.astype('float32') 
     print(x.dtype) 
@@ -158,11 +162,7 @@ if uploaded_file is not None:
         st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
         
         
-def prepare(filepath):
-    opencv_image = cv2.imdecode(file_bytes, 1)
-    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
-    arr=new_array.reshape(-1, 28, 28, 3)
-    return arr
+
 
     
    # Genrate_pred = st.button("Generate Prediction")
