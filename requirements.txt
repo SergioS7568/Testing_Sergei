@@ -1,98 +1,100 @@
 
-absl-py==0.10
 
-astunparse==1.6.3 
+absl-py
 
-cachetools==4.2.4 
+astunparse
 
-certifi==2021.10.8 
+cachetools
 
-charset-normalizer==2.0.9
+certifi
 
- click==7.1.2 
+charset-normalizer
 
-fastapi==0.63.0
+ click
 
- gast==0.4.0
+fastapi
 
-google-auth==2.3.3 
+ gast
 
-
-
-google-auth-oauthlib==0.4.6 
-google-pasta==0.2.0 
-
-grpcio==1.42.0 
-
-h11==0.12.0
-
- h5py==2.10.0
-
- idna==3.3 
-
-importlib-metadata==4.8.2
+google-auth
 
 
-keras-preprocessing==1.1.2
- markdown==3.3.6 
 
-numpy==1.18.5 
+google-auth-oauthlib
+google-pasta
 
-oauthlib==3.1.1
+grpcio
 
- opt-einsum==3.3.0 
+h11
 
-protobuf==3.19.1 
+ h5py
 
-pyasn1==0.4.8 
+ idna
 
-pyasn1-modules==0.2.8 
+importlib-metadata
+
+
+keras-preprocessing
+ markdown
+
+numpy
+
+oauthlib
+
+ opt-einsum
+
+protobuf
+
+pyasn1
+
+pyasn1-modules
 
 pydantic
 
-requests==2.26.0
+requests
 
 
 
 
 
 
-requests-oauthlib==1.3.0
+requests-oauthlib
 
- rsa==4.8 
+ rsa
 
-six==1.16.0 
+six
 
-starlette==0.13.6
+starlette
 
- tensorboard==2.7.0 
+ tensorboard
  
- tensorboard-data-server==0.6.1
+ tensorboard-data-server
 
- tensorboard-plugin-wit==1.8.0
+ tensorboard-plugin-wit
 
- tensorflow==2.5.0
- 
- 
+ tensorflow
  
  
  
  
- tensorflow-estimator==2.5.0rc0
- termcolor==1.1.0
  
  
- typing-extensions==3.7.4
+ tensorflow-estimator
+ termcolor
+ 
+ 
+ typing-extensions
 
-urllib3==1.26.7 
+urllib3
 
-uvicorn==0.12.2
+uvicorn
 
- werkzeug==2.0.2 
+ werkzeug
 
-wheel==0.37.0
+wheel
 
- wrapt==1.12.1
+ wrapt
 
- zipp==3.6.0
+ zipp
+
 
