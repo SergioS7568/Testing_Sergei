@@ -13,7 +13,7 @@ charset-normalizer==2.0.9
 
 fastapi==0.63.0
 
- gast==0.3.3 
+ gast==0.4.0
 
 google-auth==2.3.3 
 
