@@ -144,7 +144,6 @@ if uploaded_file is not None:
     
 
     def prepare(filepath):
-    img_array = cv2.imdecode(file_bytes, 1)
     new_array = cv2.resize(opencv_image, (28, 28))
     arr=new_array.reshape(-1, 28, 28, 3)
     return arr
