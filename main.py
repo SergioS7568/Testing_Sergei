@@ -140,7 +140,7 @@ if uploaded_file is not None:
     st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
-    img_reshape = resized[-1, 28, 28, 3]
+    img_reshape = resized[np.newaxis,...]
     
     
     
