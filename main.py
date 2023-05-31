@@ -144,13 +144,6 @@ if uploaded_file is not None:
     
     
     
- 
-
-
-   img_reshape = tf.cast(tf.float32)
-    print(img_reshape.dtype)
-    
-    
     if Genrate_pred:
         prediction = loaded_model.predict([img_reshape]).argmax()
         st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
