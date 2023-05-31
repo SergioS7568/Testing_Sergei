@@ -140,25 +140,23 @@ if uploaded_file is not None:
     st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
-    img_reshape = resized[np.newaxis,...]
+    img_reshape = resized[-1, 28, 28, 3]
     
-def prepare(filepath):
-    opencv_image = cv2.imdecode(file_bytes, 1)
-    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
-    arr=new_array.reshape(-1, 28, 28, 3)
-    return arr
+    
+    
+ 
 
-    x=prepare('opencv_image')
-    x = tf.keras.utils.normalize(x, axis=1)
-    x = x.astype('float32') 
-    print(x.dtype) 
-    x = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
-    x = tf.cast(x,tf.float32)
-    print(x.dtype)
+
+   img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)
+    img_reshape =img_reshape.astype('float32') 
+    print(img_reshape.dtype) 
+    img_reshape= tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
+   img_reshape = tf.cast(img_reshape,tf.float32)
+    print(img_reshape.dtype)
     
     
     if Genrate_pred:
-        prediction = loaded_model.predict([x]).argmax()
+        prediction = loaded_model.predict([img_reshape]).argmax()
         st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
         
         
