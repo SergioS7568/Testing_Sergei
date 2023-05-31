@@ -141,8 +141,8 @@ if uploaded_file is not None:
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
-    
-    
+    img_reshape.set_shape((None, 28, 28, 3))
+
     
     if Genrate_pred:
         prediction = loaded_model.predict([img_reshape]).argmax()
