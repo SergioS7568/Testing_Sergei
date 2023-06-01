@@ -41,8 +41,8 @@ if uploaded_file is not None:
         #print(results_index)
         for X in results_index[-10:]:
             #print(classes[X])
-            print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
-            print(X)
+            #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
+            #print(X)
         #pred_name = np.argmax(prediction, axis=1) 
         #print(pred_name)
         #i=pred_name
