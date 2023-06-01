@@ -150,10 +150,10 @@ if uploaded_file is not None:
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
         #print(prediction)
        
-        pred_name = np.argmax(map_dict, axis=1) 
+        pred_name = np.argmax(prediction, axis=1) 
         print(pred_name)
-        probs = np.exp(map_dict[:,1])      
-        print(probs)
+        #probs = np.exp(map_dict[:,1])      
+        #print(probs)
         #st.title("Predicted Label for the image is {}".pred_name)
         #st.image(opencv_image, caption=prediction.shape)
         #st.title("Predicted Label for the image is {}".map_dict(prediction))
