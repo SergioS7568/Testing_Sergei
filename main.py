@@ -146,7 +146,8 @@ if uploaded_file is not None:
 
     if Genrate_pred:
         prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
-        print(CLASSES[np.argmax(prediction)])
+        print(prediction)
+        print("Prediction: {}".format(tf.argmax(prediction, axis=1)))
         #st.title(predictions)
 
         
