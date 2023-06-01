@@ -148,7 +148,7 @@ if uploaded_file is not None:
         prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
         #print(prediction[0])
         st.image(opencv_image, caption=prediction.shape)
-        st.title("Predicted Label for the image is {}".prediction)
+        st.title("Predicted Label for the image is {}". np.argmax(prediction, axis=1))
         #print("Prediction: {}".format(tf.argmax(prediction, axis=1)))
         #prediction= tf.print(prediction, [prediction], "This is a prediction: ")
         #st.title(predictions)
