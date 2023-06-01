@@ -148,7 +148,9 @@ if uploaded_file is not None:
         #prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
         #print(prediction[0])
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
-        print(prediction)
+        #print(prediction)
+        results_index = np.argsort(prediction)
+        print(results_index)
         #pred_name = np.argmax(prediction, axis=1) 
         #print(pred_name)
         #i=pred_name
