@@ -148,7 +148,7 @@ if uploaded_file is not None:
         prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
         #print(prediction)
         #print("Prediction: {}".format(tf.argmax(prediction, axis=1)))
-        prediction= tf.Print(prediction, [prediction], "This is a prediction: ")
+        prediction= tf.print(prediction, [prediction], "This is a prediction: ")
         #st.title(predictions)
 
         
