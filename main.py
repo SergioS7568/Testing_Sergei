@@ -149,7 +149,8 @@ if uploaded_file is not None:
         #print(prediction[0])
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
         #print(prediction)
-        pred_name = np.argmax(prediction, axis=1) 
+        #pred_name = np.argmax(prediction, axis=1) 
+        preds_name = np.exp(prediction[:,1])
         print(pred_name)
         i=pred_name
         print(map_dict[i])
