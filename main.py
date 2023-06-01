@@ -39,7 +39,7 @@ if uploaded_file is not None:
         #print(prediction)
         results_index = np.argsort(prediction)
         #print(results_index)
-        for X in results_index[-10:]:
+        #for X in results_index[-10:]:
             #print(classes[X])
             #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
             #print(X)
