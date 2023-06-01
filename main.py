@@ -145,7 +145,7 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-        prediction = loaded_model.predict([img_reshape.reshape(-1, 28, 28, 1)])
+        prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
         print(prediction)
         #st.title(predictions)
 
