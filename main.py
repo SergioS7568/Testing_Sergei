@@ -38,10 +38,10 @@ if uploaded_file is not None:
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
         #print(prediction)
         results_index = np.argsort(prediction)
-        print(results_index)
-        #for X in results_index[-10:]:
-            #print(classes[X])
-            #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
+        #print(results_index)
+        for X in results_index[-10:]:
+            print(classes[X])
+            print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
             #print(X)
         #pred_name = np.argmax(prediction, axis=1) 
         #print(pred_name)
