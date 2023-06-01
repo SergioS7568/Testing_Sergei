@@ -146,7 +146,8 @@ if uploaded_file is not None:
 
     if Genrate_pred:
         prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
-        print(prediction[0])
+        #print(prediction[0])
+        print("prediction shape:", prediction.shape)
         #print("Prediction: {}".format(tf.argmax(prediction, axis=1)))
         #prediction= tf.print(prediction, [prediction], "This is a prediction: ")
         #st.title(predictions)
