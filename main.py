@@ -33,12 +33,12 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-        #prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
-        #print(prediction[0])
-        #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
         classes = np.argmax(prediction, axis = 1)
         print(classes)
+        #prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
+        #print(prediction[0])
+        #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
         #print("THIS ")
         #prediction = loaded_model(img_reshape).argsort()
         #print(prediction.shape)
