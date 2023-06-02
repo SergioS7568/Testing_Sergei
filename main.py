@@ -37,13 +37,13 @@ if uploaded_file is not None:
         #print(prediction[0])
         #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
         prediction = loaded_model(img_reshape.reshape(-1, 28, 28, 1))
+        classes = np.argmax(prediction, axis = 1)
+        print(classes)
         #print("THIS ")
         #prediction = loaded_model(img_reshape).argsort()
         #print(prediction.shape)
         #print(" IS ")
-        classes = np.argmax(prediction, axis = 1)
-        print(classes)
-        print("WORKING  ")
+        #print("WORKING  ")
         #print("AS INTENDED ")
         
         
