@@ -37,49 +37,6 @@ if uploaded_file is not None:
         #prediction = np.argmax(prediction, axis = 1)
         prediction= tf.argmax(prediction, axis=1)
         print(prediction)
-        #prediction = loaded_model([img_reshape.reshape(-1, 28, 28, 1)])
-        #print(prediction[0])
-        #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
-        #print("THIS ")
-        #prediction = loaded_model(img_reshape).argsort()
-        #print(prediction.shape)
-        #print(" IS ")
-        #print("WORKING  ")
-        #print("AS INTENDED ")
-        
-        
        
-        #results_index = np.argsort(prediction)
-        #print(results_index)
-        #for X in results_index[-1:]:
-            #print(classes[X])
-            #print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
-            #print(X)
-        #pred_name = np.argmax(prediction, axis=1) 
-        #print(pred_name)
-        #i=pred_name
-        #print(map_dict[i])
-        #preds_name = np.exp(prediction[:,1])
-        # print(preds_name)
-        #i=preds_name
-        #print(map_dict[i])
-        
-        #probs = np.exp(map_dict[:,1])      
-        #print(probs)
-        #st.title("Predicted Label for the image is {}".pred_name)
-        #st.image(opencv_image, caption=prediction.shape)
-        #st.title("Predicted Label for the image is {}".map_dict(prediction))
-        #print("Prediction: {}".format(tf.argmax(prediction, axis=1)))
-        #prediction= tf.print(prediction, [prediction], "This is a prediction: ")
-        #st.title(predictions)
-
-        
-
-
-    
-   # Genrate_pred = st.button("Generate Prediction")
-   # if Genrate_pred:
-       #prediction = loaded_model.predict(img_reshape).argmax()
-      # st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
 
 
