@@ -41,10 +41,10 @@ if uploaded_file is not None:
         #prediction = loaded_model(img_reshape).argsort()
         print(prediction.shape)
         print(" IS ")
-        classes = np.argmax(prediction, axis = 1)
-        print("WORKING  ")
-        print(classes)
-        print("AS INTENDED ")
+        #classes = np.argmax(prediction, axis = 1)
+        #print("WORKING  ")
+        #print(classes)
+        #print("AS INTENDED ")
         
         
        
