@@ -39,7 +39,7 @@ if uploaded_file is not None:
         #prediction = loaded_model(img_reshape).argsort()
         print(prediction)
         print("HELLOOOOOOOOOOOOOOOOOOOOOOOOO ")
-        classes = np.argmax(predictions, axis = 1)
+        classes = np.argmax(prediction, axis = 1)
         print(classes)
        
         #results_index = np.argsort(prediction)
