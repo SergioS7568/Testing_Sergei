@@ -44,7 +44,7 @@ if uploaded_file is not None:
         classes = np.argmax(prediction, axis = 1)
         print("WORKING  ")
         print(classes)
-         print("AS INTENDED ")
+        print("AS INTENDED ")
         
         
        
