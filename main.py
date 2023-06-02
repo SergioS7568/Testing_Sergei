@@ -36,7 +36,7 @@ if uploaded_file is not None:
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         prediction = loaded_model.predict(img_reshape).argmax()
         print(loaded_model.predict(img_reshape).argmax())
-        print(classes[prediction])
+        print(prediction)
         #pred = np.exp(prediction[:,3])
         #print(pred)
         
