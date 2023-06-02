@@ -33,7 +33,7 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-        img_reshape = img_reshape.reshape(None, 28, 28, 3)
+        img_reshape = img_reshape.reshape(0, 28, 28, 3)
         prediction = loaded_model.predict(img_reshape).argmax()
         print(prediction)
         #print=  (classes[prediction])
