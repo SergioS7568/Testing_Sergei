@@ -42,8 +42,8 @@ if uploaded_file is not None:
         #print(prediction.shape)
         #print(" IS ")
         classes = np.argmax(prediction, axis = 1)
-        print("WORKING  ")
         print(classes)
+        print("WORKING  ")
         #print("AS INTENDED ")
         
         
