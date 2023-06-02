@@ -34,10 +34,12 @@ if uploaded_file is not None:
 
     if Genrate_pred:
         img_reshaped = img_reshape.reshape(-1, 28, 28, 1)
-        prediction = loaded_model.predict(img_reshaped).argmax()
+        prediction = loaded_model(img_reshaped).argmax()
         print(prediction)
+        print=  (classes[prediction])
         #pred = np.exp(prediction[:,3])
         #print(pred)
+        
         #prod = np.argmax(prediction, axis=1)
         print("hello")
         #pred = np.argmax(prediction)
