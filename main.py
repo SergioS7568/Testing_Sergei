@@ -163,6 +163,7 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
+            img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             pred = loaded_model.predict(tf.expand_dims(img_reshape, axis=0))
             pred_class = classes[pred.argmax()]
             plt.imshow(img_reshape)
@@ -175,7 +176,6 @@ if uploaded_file is not None:
         #plt.imshow(img.squeeze()) 
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
-        #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         #predictions = loaded_model.predict(img_reshape)
         #string = "this is a prediction:"+classes[np.argmax(predictions)]
         #print(string)
