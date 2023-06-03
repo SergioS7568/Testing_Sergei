@@ -165,8 +165,8 @@ if uploaded_file is not None:
     if Genrate_pred:
         #img = img_reshape
         #plt.imshow(img.squeeze()) 
-        plt.imshow(img_reshape) 
-        np.expand_dims(img_reshape, axis=0)
+        #plt.imshow(img_reshape) 
+        #np.expand_dims(img_reshape, axis=0)
         #img_reshaped = img_reshaped.reshape(-1, 28, 28, 1)
         pred = loaded_model.predict(img_reshaped)
         ind = (-pred).argsort()[:5]
