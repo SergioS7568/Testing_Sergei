@@ -12,6 +12,8 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 
 
 
+
+
 loaded_model = tf.keras.models.load_model('saved_model/mdl_wt.hdf5')
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
@@ -163,7 +165,7 @@ if uploaded_file is not None:
     if Genrate_pred:
         #img = img_reshape
         #plt.imshow(img.squeeze()) 
-        img_reshape = np.expand_dims(img_reshape, axis=0)
+        img_reshape = np.expand_dims(img_reshape.reshape(28,28), axis=0)
         #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         pred = loaded_model.predict(img_reshape)
         ind = (-pred).argsort()[:5]
