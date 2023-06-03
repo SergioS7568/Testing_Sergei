@@ -167,11 +167,18 @@ if uploaded_file is not None:
         #plt.imshow(img.squeeze()) 
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
-        img_reshape = img_reshape.reshape(-1, 28, 28, float32)
+        #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
+        predictions = predict(img_reshape, loaded_model)
+        string = "this is a prediction:"+classes[np.argmax(predictions)]
+        print(string)
+
+            
+            
+            
         #pred = loaded_model.predict(img_reshape) 
         #pred = tf.nn.tanh(pred, name ='tanh')
-        prediction = loaded_model.predict(img_reshape[:1])
-        print("prediction shape:", prediction.shape)
+        #prediction = loaded_model.predict(img_reshape[:1])
+        #print("prediction shape:", prediction.shape)
         #tensorshow = tf.
         #print(pred)
         #ind = (-pred).argsort()[:5]
