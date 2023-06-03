@@ -164,9 +164,8 @@ if uploaded_file is not None:
 
     if Genrate_pred:
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-            prediction = np.argmax(img_reshape)
-            print(prediction)
-            #print(pred)
+            pred = loaded_model.predict(img_reshape) 
+            print(pred)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
             #plt.title(pred_class)
