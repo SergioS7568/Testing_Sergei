@@ -161,13 +161,14 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-        img_reshape = img_reshape.reshape(-1, 28, 28, 1)
+        #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         #img = img_reshape
         #plt.imshow(img.squeeze()) 
-        pred = loaded_model.predict(np.expand_dims(img_reshape, axis=0))[0]
+        img_reshape = np.expand_dims(img_reshape, axis=0)
+        pred = loaded_model.predict(img_reshape)[0]
         ind = (-pred).argsort()[:5]
-        latex = [classes[x] for x in ind]
-        print(latex)
+        #latex = [classes[x] for x in ind]
+        #print(latex)
         
         #prod = np.argmax(prediction, axis=1)
         #print("hello")
