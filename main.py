@@ -169,7 +169,7 @@ if uploaded_file is not None:
         #np.expand_dims(img_reshape, axis=0)
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         pred = loaded_model.predict(img_reshape) 
-        pred = tf.nn.tanh(a, name ='tanh')
+        pred = tf.nn.tanh(pred, name ='tanh')
         print(pred)
         #ind = (-pred).argsort()[:5]
         #print(ind)
