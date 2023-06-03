@@ -168,10 +168,11 @@ if uploaded_file is not None:
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-        print(img_reshape)
-        pred = loaded_model.predict(img_reshape).argmax()
-        ind = (-pred).argsort()[:5]
-        print(ind)
+        pred = loaded_model.predict(img_reshape) 
+        pred = tf.nn.tanh(a, name ='tanh')
+        print(pred)
+        #ind = (-pred).argsort()[:5]
+        #print(ind)
         #latex = ind
         #prod = loaded_model.predict(pred) 
         #ond = (-prod).argsort()[:5]
