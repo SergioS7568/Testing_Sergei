@@ -168,7 +168,7 @@ if uploaded_file is not None:
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-        pred = (loaded_model.predict(img_reshape).argmax())[0]
+        pred = loaded_model.predict(img_reshape).argmax()[0]
         ind = (-pred).argsort()[:5]
         print(ind)
         latex = ind
