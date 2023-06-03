@@ -172,7 +172,7 @@ if uploaded_file is not None:
         #pred = tf.nn.tanh(pred, name ='tanh')
         prediction = loaded_model.predict(img_reshape[:1])
         print("prediction shape:", prediction.shape)
-        tensorshow = tf.
+        #tensorshow = tf.
         #print(pred)
         #ind = (-pred).argsort()[:5]
         #print(ind)
