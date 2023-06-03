@@ -11,11 +11,21 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 
 
 
-loaded_model = tf.keras.models.load_model('saved_model/mdl_wt.hdf5')
+loaded_model = tf.keras.models.load_model('saved_model/mdl_wts.hdf5')
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
 
-classes = ['aircraft carrier', 'airplane', 'alarm clock', 'ambulance', 'angel', 'ant', 'anvil', 'apple', 'asparagus', 'axe', 'backpack', 'banana', 'bandage', 'barn', 'baseball', 'baseball bat', 'basket', 'basketball', 'bat', 'beard', 'bed', 'bee', 'belt', 'bench', 'bicycle', 'binoculars', 'bird', 'birthday cake', 'book', 'boomerang', 'bottlecap', 'bowtie', 'bracelet', 'brain', 'bread', 'bridge', 'broccoli', 'broom', 'bucket', 'bulldozer', 'bus', 'butterfly', 'chandelier', 'church', 'clock', 'coffee cup', 'compass', 'computer', 'cookie', 'cooler', 'couch', 'cow', 'crab', 'crocodile', 'dog', 'dragon', 'garden hose', 'giraffe', 'goatee', 'grass', 'guitar', 'hamburger', 'hammer', 'hat', 'headphones', 'hospital', 'hot air balloon', 'hot dog', 'hourglass', 'mailbox', 'map', 'marker', 'microwave', 'monkey', 'owl', 'paintbrush', 'paint can', 'palm tree', 'paper clip', 'parachute', 'parrot', 'passport', 'power outlet', 'purse', 'rabbit', 'raccoon', 'radio', 'remote control', 'rhinoceros', 'rifle', 'river', 'roller coaster', 'rollerskates', 'sailboat', 'sandwich', 'saw', 'saxophone', 'stairs', 'star', 'steak', 'string bean', 'The Eiffel Tower', 'toothpaste', 'tornado', 'tractor', 'traffic light', 'train', 'violin', 'washing machine', 'watermelon', 'waterslide', 'whale', 'wine bottle']
+
+map_dict = {0: 'dog',
+            1: 'horse',
+            2: 'elephant',
+            3: 'butterfly',
+            4: 'chicken',
+            5: 'cat',
+            6: 'cow',
+            7: 'sheep',
+            8: 'spider',
+            9: 'squirrel'}
 
 
 if uploaded_file is not None:
@@ -36,6 +46,7 @@ if uploaded_file is not None:
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         prediction = loaded_model.predict(img_reshape).argmax()
         print(loaded_model.predict(img_reshape).argmax())
+        st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
         print(prediction)
         #pred = np.exp(prediction[:,3])
         #print(pred)
