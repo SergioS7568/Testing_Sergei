@@ -171,10 +171,11 @@ if uploaded_file is not None:
         pred = loaded_model.predict(img_reshape)[0]
         ind = (-pred).argsort()[:5]
         print(ind)
+        latex = ind
         #prod = loaded_model.predict(pred) 
         #ond = (-prod).argsort()[:5]
         #print(ond)
-        #latex = [classes[x] for x in ind]
+        latex = [classes[x] for x in ind]
         #print(latex)
         
         #prod = np.argmax(prediction, axis=1)
