@@ -155,17 +155,26 @@ if uploaded_file is not None:
     img_reshape = resized[np.newaxis,...]
 
 
+import matplotlib.pyplot as plt
 
     if Genrate_pred:
         img_reshape = img_reshape.reshape(3, 28, 28, 1)
         #prediction = loaded_model.predict(img_reshape).argmax()
         #print(loaded_model.predict(img_reshape).argmax())
-        prediction = loaded_model.predict(img_reshape)
-        prediction = np.argmax(prediction, axis=1)
+        #prediction = loaded_model.predict(img_reshape)
+        #prediction = np.argmax(prediction, axis=1)
         #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
-        print(prediction)
+        #print(prediction)
         #pred = np.exp(prediction[:,3])
         #print(pred)
+        %matplotlib inline  
+        idx = img_reshape
+        img = x_test[idx]
+        plt.imshow(img.squeeze()) 
+        pred = model.predict(np.expand_dims(img, axis=0))[0]
+        ind = (-pred).argsort()[:5*]
+        latex = [class_names[x] for x in ind]
+        print(latex)
         
         #prod = np.argmax(prediction, axis=1)
         print("hello")
