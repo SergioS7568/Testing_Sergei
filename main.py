@@ -3,6 +3,7 @@ import os
 import cv2
 import numpy as np
 import streamlit as st
+import matplotlib.pyplot as plt
 st.title("Welcome to My Home")
 
 import tensorflow as tf
@@ -155,11 +156,11 @@ if uploaded_file is not None:
     img_reshape = resized[np.newaxis,...]
 
 
-import matplotlib.pyplot as plt
+
 
     if Genrate_pred:
         img_reshape = img_reshape.reshape(3, 28, 28, 1)
-        %matplotlib inline  
+        %matplotlib inline
         idx = img_reshape
         img = x_test[idx]
         plt.imshow(img.squeeze()) 
@@ -169,7 +170,7 @@ import matplotlib.pyplot as plt
         print(latex)
         
         #prod = np.argmax(prediction, axis=1)
-        print("hello")
+        #print("hello")
         #pred = np.argmax(prediction)
         #prediction = loaded_model.predict(img_reshape).argmax()
         #print(loaded_model.predict(img_reshape).argmax())
