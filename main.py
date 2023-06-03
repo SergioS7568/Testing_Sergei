@@ -152,7 +152,7 @@ if uploaded_file is not None:
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
     opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
-    resized = cv2.resize(opencv_image,(28, 28, 3))
+    resized = cv2.resize(opencv_image,(28, 28))
     # Now do something with the image! For example, let's display it:
     st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
@@ -163,14 +163,22 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
+            pred = loaded_model.predict(tf.expand_dims(img_reshape, axis=0))
+            pred_class = classes[pred.argmax()]
+            plt.imshow(img_reshape)
+            plt.title(pred_class)
+            plt.axis(False);
+            
+            
+            
         #img = img_reshape
         #plt.imshow(img.squeeze()) 
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
         #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-        predictions = loaded_model.predict(img_reshape)
-        string = "this is a prediction:"+classes[np.argmax(predictions)]
-        print(string)
+        #predictions = loaded_model.predict(img_reshape)
+        #string = "this is a prediction:"+classes[np.argmax(predictions)]
+        #print(string)
 
             
             
