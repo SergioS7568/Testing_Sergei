@@ -166,7 +166,8 @@ if uploaded_file is not None:
         img_reshape = np.expand_dims(img_reshape, axis=0)
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         pred = loaded_model.predict(img_reshape)
-        #ind = (-pred).argsort()[:5]
+        ind = (-pred).argsort()[:5]
+        print(ind)
         #latex = [classes[x] for x in ind]
         #print(latex)
         
