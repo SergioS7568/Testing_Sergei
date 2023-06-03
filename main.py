@@ -160,7 +160,6 @@ if uploaded_file is not None:
 
     if Genrate_pred:
         img_reshape = img_reshape.reshape(3, 28, 28, 1)
-        %matplotlib inline
         idx = img_reshape
         img = x_test[idx]
         plt.imshow(img.squeeze()) 
