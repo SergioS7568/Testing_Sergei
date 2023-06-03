@@ -164,7 +164,7 @@ if uploaded_file is not None:
         img = x_test[idx]
         plt.imshow(img.squeeze()) 
         pred = model.predict(np.expand_dims(img, axis=0))[0]
-        ind = (-pred).argsort()[:5*]
+        ind = (-pred).argsort()[:5]
         latex = [class_names[x] for x in ind]
         print(latex)
         
