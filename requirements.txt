@@ -41,6 +41,8 @@ keras-preprocessing
 
 numpy
 
+matplotlib-inline
+
 opencv-python-headless
 
 oauthlib
@@ -56,11 +58,6 @@ pyasn1-modules
 pydantic
 
 requests
-
-
-
-
-
 
 requests-oauthlib
 
