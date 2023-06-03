@@ -41,7 +41,7 @@ keras-preprocessing
 
 numpy
 
-
+matplotlib
 
 opencv-python-headless
 
