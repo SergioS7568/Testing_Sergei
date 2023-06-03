@@ -161,7 +161,7 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-        #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
+        img_reshape = img_reshape.reshape(-1, 28, 28, 1)
         #img = img_reshape
         #plt.imshow(img.squeeze()) 
         img_reshape = np.expand_dims(img_reshape, axis=0)
