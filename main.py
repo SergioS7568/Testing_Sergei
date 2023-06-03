@@ -168,12 +168,12 @@ if uploaded_file is not None:
         #plt.imshow(img_reshape) 
         #np.expand_dims(img_reshape, axis=0)
         img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-        pred = loaded_model.predict(img_reshape)
+        pred = loaded_model.predict(img_reshape)[0]
         ind = (-pred).argsort()[:5]
         print(ind)
-        prod = loaded_model.predict(pred) 
-        ond = (-prod).argsort()[:5]
-        print(ond)
+        #prod = loaded_model.predict(pred) 
+        #ond = (-prod).argsort()[:5]
+        #print(ond)
         #latex = [classes[x] for x in ind]
         #print(latex)
         
