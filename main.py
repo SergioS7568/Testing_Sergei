@@ -172,6 +172,7 @@ if uploaded_file is not None:
             
             
             #print(prediction)
+            prediction=np.argmax(prediction[0], axis=-1)
             print(prediction.shape)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
