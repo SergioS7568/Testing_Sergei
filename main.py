@@ -165,10 +165,10 @@ if uploaded_file is not None:
 
     if Genrate_pred:
                         
-            img_reshape = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
+            img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
             img_reshape = img_reshape.astype('float32')  # dtype of x changed back to numpy float32
             print(img_reshape.dtype)           # prints correctly float32 (notice that its not tf.float32)
-            prediction = loaded_model.predict([x]) 
+            prediction = loaded_model.predict([img_reshape]) 
             #img_reshape = img_reshape.astype('float32')        
             #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             #prediction = loaded_model.predict(img_reshape).argmax()
