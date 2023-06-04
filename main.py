@@ -169,10 +169,10 @@ if uploaded_file is not None:
             
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            
+            prediction.shape
             prediction= np.argmax(prediction)
-            #print(prediction)
-            print(prediction.shape)
+            print(prediction)
+            #print(prediction.shape)
             #print(classes[np.argmax(prediction[0])])
             #print(classes(prediction))
             #pred_class = classes[pred.argmax()]
