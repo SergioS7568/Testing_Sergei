@@ -150,10 +150,10 @@ map_dict = {0: ' aircraft carrier ',
 if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    opencv_image = cv2.imdecode(file_bytes, -1)
-    opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
-    opencv_image = opencv_image / 255
-    resized = cv2.resize(opencv_image,(28, 28))
+    opencv_image = np.asarray(opencv_image)
+    img = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
+    img = img / 255
+    resized = cv2.resize(img,(28, 28))
     # Now do something with the image! For example, let's display it:
     st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
