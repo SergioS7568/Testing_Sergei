@@ -157,8 +157,12 @@ if uploaded_file is not None:
             #img_reshape = img_reshape.astype('float32')        
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             prediction =loaded_model.predict(img_reshape)
-            pred = prediction.reshape(-1)
-            print(pred[5])
+            #pred = prediction.reshape(-1)
+            
+            a = np.array(prediction)
+            b = np.dstack([a])
+            print(b)
+            #print(pred[5])
             #print(pred.argmax())
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
