@@ -152,10 +152,6 @@ if uploaded_file is not None:
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
-    #test_prediction = loaded_model.predict(file_bytes) 
-    #print(predictions_single)
-
-
 
     if Genrate_pred:
             #img_reshape = img_reshape.astype('float32')        
