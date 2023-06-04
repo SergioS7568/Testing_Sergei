@@ -165,9 +165,9 @@ if uploaded_file is not None:
     if Genrate_pred:
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             prediction = loaded_model.predict(img_reshape).argmax()
-            st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
+            #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            #print(pred)
+            print(prediction)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
             #plt.title(pred_class)
