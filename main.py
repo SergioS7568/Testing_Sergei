@@ -151,9 +151,10 @@ if uploaded_file is not None:
     img = img[:,:,0]
     #resized = cv2.resize(img,(28, 28))
     Genrate_pred = st.button("Generate Prediction")
+    #resized = mobilenet_v2_preprocess_input(resized)       
     #resized = mobilenet_v2_preprocess_input(resized)
     #img_reshape = resized[np.newaxis,...]
-    img = img.resize((28, 28))
+    img = img.reshape(1,28, 28,3)
     arr = np.array(img, dtype = 'float32')
     arr = arr.reshape((28, 28))
     arr = arr/255.0
