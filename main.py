@@ -153,7 +153,7 @@ if uploaded_file is not None:
     opencv_image = cv2.imdecode(file_bytes, 1)
     opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
     opencv_image = opencv_image / 255
-    resized = cv2.resize(opencv_image,(28, 28)).astype('float32')
+    resized = cv2.resize(opencv_image,(28, 28))
     # Now do something with the image! For example, let's display it:
     st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
@@ -164,11 +164,17 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
+                        
+            img_reshape = tf.keras.utils.normalize(x, axis=1)  # x becomes a tensor
+            img_reshape = img_reshape.astype('float32')  # dtype of x changed back to numpy float32
+            print(img_reshape.dtype)           # prints correctly float32 (notice that its not tf.float32)
+            prediction = loaded_model.predict([x]) 
+            #img_reshape = img_reshape.astype('float32')        
             #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-            prediction = loaded_model.predict(img_reshape).argmax()
+            #prediction = loaded_model.predict(img_reshape).argmax()
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            print(prediction)
+            #print(prediction)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
             #plt.title(pred_class)
