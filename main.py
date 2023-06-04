@@ -159,7 +159,7 @@ if uploaded_file is not None:
     #print(predictions_single)
 
 
-
+import tensorflow.compat.v1 as tf2
 
     if Genrate_pred:
            
@@ -169,9 +169,17 @@ if uploaded_file is not None:
             
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            prediction.shape
-            prediction= np.argmax(prediction)
-            print(prediction)
+            #prediction.shape
+            #prediction= np.argmax(prediction)
+            #print(prediction)
+            
+            
+            tf.disable_v2_behavior()
+            sampleTensor = tf.constant(prediction)
+            print("Tensor = ",sampleTensor)
+            convertedArray = sampleTensor.eval(session=tf.Session())
+            print("Array = ",convertedArray)
+            
             #print(prediction.shape)
             #print(classes[np.argmax(prediction[0])])
             #print(classes(prediction))
