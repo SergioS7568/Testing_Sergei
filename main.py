@@ -150,7 +150,7 @@ map_dict = {0: ' aircraft carrier ',
 if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    opencv_image = cv2.imdecode(file_bytes, 1)
+    opencv_image = cv2.imdecode(file_bytes, -1)
     opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
     opencv_image = opencv_image / 255
     resized = cv2.resize(opencv_image,(28, 28))
