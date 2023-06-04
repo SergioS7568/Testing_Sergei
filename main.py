@@ -158,7 +158,7 @@ if uploaded_file is not None:
     #img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
     img = file_bytes
     img= cv2.resize(img, (28,28))
-    img_array = keras.preprocessing.image.img_to_array(file_bytes, dtype="float32")
+    img_array = keras.preprocessing.image.img_to_array(file_bytes)
     #img_array = tf.expand_dims(img_array, 0) # Create a batch
     #predictions = model.predict(img_array)
     #score = tf.nn.softmax(predictions[0])            
