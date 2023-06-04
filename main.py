@@ -160,7 +160,7 @@ if uploaded_file is not None:
     img = file_bytes
     img= cv2.resize(img, (28,28))
     img_array = image.img_to_array(img)
-    #img_array = tf.expand_dims(img_array, 0) # Create a batch
+    img_array = tf.expand_dims(img_array, 0) # Create a batch
     #predictions = model.predict(img_array)
     #score = tf.nn.softmax(predictions[0])            
     #resized = cv2.resize(img,(28, 28))
