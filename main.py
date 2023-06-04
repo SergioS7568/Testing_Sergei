@@ -151,8 +151,7 @@ if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
-    img = img / 255
-    resized = cv2.resize(img,(28, 28))
+    resized = cv2.resize(img,(28, 28)).astype('float32') 
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
@@ -162,10 +161,10 @@ if uploaded_file is not None:
 
     if Genrate_pred:
                         
-            img_reshape = tf.keras.utils.normalize(img_reshape, axis=1)  # x becomes a tensor
-            img_reshape = img_reshape.astype('float32')  # dtype of x changed back to numpy float32
-            print(img_reshape.dtype)           # prints correctly float32 (notice that its not tf.float32)
-            prediction = loaded_model.predict([img_reshape]) 
+            img_reshaped = tf.keras.utils.normalize(cv2)  # x becomes a tensor
+            img_reshaped = img_reshaped.astype('float32')  # dtype of x changed back to numpy float32
+            print(img_reshaped.dtype)           # prints correctly float32 (notice that its not tf.float32)
+            prediction = loaded_model.predict([img_reshaped]) 
             #img_reshape = img_reshape.astype('float32')        
             #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             #prediction = loaded_model.predict(img_reshape).argmax()
