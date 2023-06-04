@@ -160,7 +160,7 @@ if uploaded_file is not None:
     img= cv2.resize(img, (28,28))
     img_array = image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
-    
+    Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)       
     #resized = mobilenet_v2_preprocess_input(resized)
     #img_reshape = resized[np.newaxis,...]
@@ -170,9 +170,8 @@ if uploaded_file is not None:
     #arr = arr/255.0
 
     if Genrate_pred:
-            predictions = loaded_model.predict(img_array)           
-            resized = cv2.resize(img,(28, 28))
-            Genrate_pred = st.button("Generate Prediction")
+            predictions = loaded_model.predict(img_array)  
+            print(predict) 
             score = tf.nn.softmax(predictions[0])
             print(score)
             #print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score)))
