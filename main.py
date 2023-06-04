@@ -167,9 +167,3 @@ if uploaded_file is not None:
             prediction.shape
             #prediction= np.argmax(prediction)
             print(prediction)
-            
-            #tf2.disable_v2_behavior()
-            #sampleTensor = tf2.constant(prediction)
-            #print("Tensor = ",sampleTensor)
-            #convertedArray = sampleTensor.eval(session=tf2.Session())
-            #print("Array = ",convertedArray)
