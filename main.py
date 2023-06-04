@@ -3,7 +3,6 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
-import time
 
 
 st.title('Green stem Classifier')
