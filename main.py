@@ -8,7 +8,7 @@ from tensorflow import keras
 st.title("Welcome to My Home")
 
 import tensorflow as tf
-from tensorflow.keras.preprocessing import image, img_to_array
+from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 
 
@@ -158,7 +158,7 @@ if uploaded_file is not None:
     #img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
     img = file_bytes
     img= cv2.resize(img, (28,28))
-    img_array = image.img_to_array(file_bytes, dtype="float32")
+    img_array = image(file_bytes, dtype="float32")
     #img_array = tf.expand_dims(img_array, 0) # Create a batch
     #predictions = model.predict(img_array)
     #score = tf.nn.softmax(predictions[0])            
