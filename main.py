@@ -150,7 +150,7 @@ if uploaded_file is not None:
     #file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     #file_bytes = file_bytes[:,:,0]
     #uploaded_file = st.file_uploader("Upload Image")
-    image = Image.open(uploaded_file)
+    #image = Image.open(uploaded_file)
     st.image(uploaded_file, caption='Input', use_column_width=True)
     img_array = np.array(image)
     img= cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
