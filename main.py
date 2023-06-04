@@ -19,12 +19,12 @@ if file_uploaded is not None:
             with st.spinner('Model working....'):
                 # plt.imshow(image)
                 # plt.axis("off")
-                predictions = predict(image)
+                predictions = predictor(image)
                 time.sleep(1)
                 st.success('Classified')
                 st.write(predictions)
 
-    def predict(image):
+    def predictor(image):
         classifier_model = "keras.h5"
         loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
         model = load_model(classifier_model)
