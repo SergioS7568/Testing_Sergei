@@ -30,3 +30,8 @@ def main():
                 time.sleep(1)
                 st.success('Classified')
                 st.write(predictions)
+                
+                
+                
+if __name__ == "__main__":
+    main()
