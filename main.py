@@ -11,9 +11,6 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 
 
-
-
-
 loaded_model = tf.keras.models.load_model('saved_model/mdl_wts2.hdf5')
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
@@ -176,7 +173,3 @@ if uploaded_file is not None:
             #print("Tensor = ",sampleTensor)
             #convertedArray = sampleTensor.eval(session=tf2.Session())
             #print("Array = ",convertedArray)
-            
-            
-
-
