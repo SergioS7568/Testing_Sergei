@@ -6,6 +6,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 st.title("Welcome to My Home")
 
+import tensorflow.compat.v1 as tf2
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
@@ -159,7 +160,6 @@ if uploaded_file is not None:
     #print(predictions_single)
 
 
-import tensorflow.compat.v1 as tf2
 
     if Genrate_pred:
             #img_reshape = img_reshape.astype('float32')        
