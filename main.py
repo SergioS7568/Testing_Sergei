@@ -160,17 +160,13 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-                        
-            img_reshaped = tf.keras.utils.normalize(cv2)  # x becomes a tensor
-            img_reshaped = img_reshaped.astype('float32')  # dtype of x changed back to numpy float32
-            print(img_reshaped.dtype)           # prints correctly float32 (notice that its not tf.float32)
-            prediction = loaded_model.predict([img_reshaped]) 
+            
             #img_reshape = img_reshape.astype('float32')        
-            #img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-            #prediction = loaded_model.predict(img_reshape).argmax()
+            img_reshape = img_reshape.reshape(-1, 28, 28, 1)
+            prediction = loaded_model.predict(img_reshape).argmax()
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            #print(prediction)
+            print(prediction)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
             #plt.title(pred_class)
