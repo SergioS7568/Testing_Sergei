@@ -16,7 +16,7 @@ loaded_model = tf.keras.models.load_model("saved_model/mdl_wts2.hdf5")
     
 def predictor(image):
     model = loaded_model
-    test_image = image.resize((200,200))
+    test_image = image.resize(-1,(28,28),1)
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
     test_image = np.expand_dims(test_image, axis=0)
