@@ -167,7 +167,8 @@ if uploaded_file is not None:
 
     if Genrate_pred:
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-            img = file_bytes
+            img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX, dtype=cv2.'float32')
+            img = img_normalized
             img= cv2.resize(img, (28,28))
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
