@@ -171,7 +171,7 @@ if uploaded_file is not None:
 
     if Genrate_pred:
             predictions = loaded_model.predict(img_array)  
-            print(predict) 
+            print(predictions) 
             score = tf.nn.softmax(predictions[0])
             print(score)
             #print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score)))
