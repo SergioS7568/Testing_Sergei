@@ -171,7 +171,7 @@ if uploaded_file is not None:
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
             
             
-            print(prediction)
+            #print(prediction)
             print(prediction.shape)
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
