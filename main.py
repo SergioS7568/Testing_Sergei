@@ -161,7 +161,7 @@ if uploaded_file is not None:
             
             a = np.array(prediction)
             b = np.dstack([a])
-            print(b)
+            print(b.shape)
             #print(pred[5])
             #print(pred.argmax())
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
