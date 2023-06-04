@@ -9,6 +9,7 @@ from tensorflow.keras.models import *
 from tensorflow.keras import preprocessing
 import time
 
+main()
 
 st.title('Green stem Classifier')
 
