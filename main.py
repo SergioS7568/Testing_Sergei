@@ -161,4 +161,4 @@ if uploaded_file is not None:
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
             #print(prediction)
             #prediction= np.argmax(prediction)
-            print(prediction.shape)
+            print(prediction.argmax())
