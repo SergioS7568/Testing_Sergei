@@ -163,7 +163,7 @@ if uploaded_file is not None:
     predictions = loaded_model.predict(img_array)
     score = tf.nn.softmax(predictions[0])            
     resized = cv2.resize(img,(28, 28))
-    #Genrate_pred = st.button("Generate Prediction")
+    Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)       
     #resized = mobilenet_v2_preprocess_input(resized)
     #img_reshape = resized[np.newaxis,...]
@@ -172,7 +172,9 @@ if uploaded_file is not None:
     #arr = arr.reshape((28, 28))
     #arr = arr/255.0
 
-    #if Genrate_pred:
+    if Genrate_pred:
+            print(predictions) 
+            print(score)
             #prediction = model.predict(arr)
             #print(prediction)
             #img_reshape = img_reshape.astype('float32')        
