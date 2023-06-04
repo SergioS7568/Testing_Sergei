@@ -153,8 +153,6 @@ if uploaded_file is not None:
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
     img = img / 255
     resized = cv2.resize(img,(28, 28))
-    # Now do something with the image! For example, let's display it:
-    st.image(opencv_image, channels="RGB")
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
