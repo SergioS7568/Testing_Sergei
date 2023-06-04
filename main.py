@@ -5,11 +5,10 @@ import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
 from tensorflow import keras
-from keras.preprocessing.image import img_to_array
 st.title("Welcome to My Home")
 
 import tensorflow as tf
-from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing import image, img_to_array
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_input as mobilenet_v2_preprocess_input
 
 
