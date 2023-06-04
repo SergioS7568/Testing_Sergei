@@ -24,18 +24,18 @@ if file_uploaded is not None:
                 st.success('Classified')
                 st.write(predictions)
 
-def predict(image):
-    classifier_model = "keras.h5"
-    loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
-    model = load_model(classifier_model)
-    test_image = image.resize((200,200))
-    test_image = preprocessing.image.img_to_array(test_image)
-    test_image = test_image / 255.0
-    test_image = np.expand_dims(test_image, axis=0)
-    class_names = {0 : 'healthy', 1 :'diseased'}
-    predictions = model.predict(test_image)
-    scores = tf.nn.softmax(predictions[0])
-    scores = scores.numpy()
-    result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
-    return result
+    def predict(image):
+        classifier_model = "keras.h5"
+        loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
+        model = load_model(classifier_model)
+        test_image = image.resize((200,200))
+        test_image = preprocessing.image.img_to_array(test_image)
+        test_image = test_image / 255.0
+        test_image = np.expand_dims(test_image, axis=0)
+        class_names = {0 : 'healthy', 1 :'diseased'}
+        predictions = model.predict(test_image)
+        scores = tf.nn.softmax(predictions[0])
+        scores = scores.numpy()
+        result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
+        return result
                 
