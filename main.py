@@ -177,55 +177,6 @@ import tensorflow.compat.v1 as tf2
             convertedArray = sampleTensor.eval(session=tf2.Session())
             print("Array = ",convertedArray)
             
-            #print(prediction.shape)
-            #print(classes[np.argmax(prediction[0])])
-            #print(classes(prediction))
-            #pred_class = classes[pred.argmax()]
-            #plt.imshow(img_reshape)
-            #plt.title(pred_class)
-            #plt.axis(False);
             
-            
-            
-        #img = img_reshape
-        #plt.imshow(img.squeeze()) 
-        #plt.imshow(img_reshape) 
-        #np.expand_dims(img_reshape, axis=0)
-        #predictions = loaded_model.predict(img_reshape)
-        #string = "this is a prediction:"+classes[np.argmax(predictions)]
-        #print(string)
-
-            
-            
-            
-        #pred = loaded_model.predict(img_reshape) 
-        #pred = tf.nn.tanh(pred, name ='tanh')
-        #prediction = loaded_model.predict(img_reshape[:1])
-        #print("prediction shape:", prediction.shape)
-        #tensorshow = tf.
-        #print(pred)
-        #ind = (-pred).argsort()[:5]
-        #print(ind)
-        #latex = ind
-        #prod = loaded_model.predict(pred) 
-        #ond = (-prod).argsort()[:5]
-        #print(ond)
-        #latex = [classes[x] for x in ind]
-        #print(latex)
-        
-        #prod = np.argmax(prediction, axis=1)
-        #print("hello")
-        #pred = np.argmax(prediction)
-        #prediction = loaded_model.predict(img_reshape).argmax()
-        #print(loaded_model.predict(img_reshape).argmax())
-        #prediction = loaded_model.predict(img_reshape)
-        #prediction = np.argmax(prediction, axis=1)
-        #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
-        #print(prediction)
-        #pred = np.exp(prediction[:,3])
-        #print(pred)
-
-        
-       
 
 
