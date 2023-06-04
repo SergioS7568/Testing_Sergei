@@ -13,7 +13,7 @@ loaded_model = tf.keras.models.load_model("saved_model/keras.h5")
     
 def predictor(image):
     classifier_model = "keras.h5"
-    model = load_model(classifier_model)
+    model = loaded_model(classifier_model)
     test_image = image.resize((200,200))
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
