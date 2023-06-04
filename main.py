@@ -155,7 +155,7 @@ if uploaded_file is not None:
     #img_reshape = resized[np.newaxis,...]
     img = img.resize((28, 28))
     arr = np.array(img, dtype = 'float32')
-    arr = arr.reshape(28, 28)
+    arr = arr.reshape((28, 28))
     arr = arr/255.0
 
     if Genrate_pred:
