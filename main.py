@@ -157,7 +157,7 @@ if uploaded_file is not None:
             #img_reshape = img_reshape.astype('float32')        
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             prediction =loaded_model.predict(img_reshape)
-            print(prediction)
+            prediction = prediction[0]
             print(prediction.shape)
             #pred = np.exp(prediction)
             #print(pred)
