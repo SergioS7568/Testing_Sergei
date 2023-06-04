@@ -161,8 +161,8 @@ if uploaded_file is not None:
     img_array = image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
     predictions = loaded_model.predict(img_array)
-    #score = tf.nn.softmax(predictions[0])            
-    #resized = cv2.resize(img,(28, 28))
+    score = tf.nn.softmax(predictions[0])            
+    resized = cv2.resize(img,(28, 28))
     #Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)       
     #resized = mobilenet_v2_preprocess_input(resized)
