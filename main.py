@@ -151,7 +151,7 @@ if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
-    resized = cv2.resize(img,(28, 28)).astype('float32') 
+    resized = cv2.resize(img,(28, 28))
     Genrate_pred = st.button("Generate Prediction")
     resized = mobilenet_v2_preprocess_input(resized)
     img_reshape = resized[np.newaxis,...]
@@ -165,7 +165,7 @@ if uploaded_file is not None:
            
             #img_reshape = img_reshape.astype('float32')        
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-            prediction = loaded_model.predict(img_reshape, batch_size=250 )
+            prediction = loaded_model.predict(img_reshape )
             
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
