@@ -148,17 +148,23 @@ if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
-    resized = cv2.resize(img,(28, 28))
+    #resized = cv2.resize(img,(28, 28))
     Genrate_pred = st.button("Generate Prediction")
-    resized = mobilenet_v2_preprocess_input(resized)
-    img_reshape = resized[np.newaxis,...]
+    #resized = mobilenet_v2_preprocess_input(resized)
+    #img_reshape = resized[np.newaxis,...]
+    img = img.resize((28, 28))
+    arr = np.array(img, dtype = 'float32')
+    arr = arr.reshape(1,28, 28,3)
+    arr = arr/255.0
 
     if Genrate_pred:
+            prediction = model.predict(arr)
+            print(prediction)
             #img_reshape = img_reshape.astype('float32')        
-            img_reshape = img_reshape.reshape(-1, 28, 28, 1)
-            prediction =loaded_model.predict(img_reshape)
-            prediction = prediction[0]
-            print(prediction.shape)
+            #img_reshape = img_reshape.reshape(-1, 28, 28, 3)
+            #prediction =loaded_model.predict(img_reshape)
+            #prediction = prediction[0]
+            #print(prediction.shape)
             #pred = np.exp(prediction)
             #print(pred)
             #pred = prediction.reshape(-1)
