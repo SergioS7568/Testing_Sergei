@@ -167,15 +167,16 @@ if uploaded_file is not None:
             prediction =loaded_model.predict(img_reshape)
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            #prediction.shape
+            print(prediction)
+            prediction.shape
             #prediction= np.argmax(prediction)
-            #print(prediction)
+            print(prediction)
             
-            tf2.disable_v2_behavior()
-            sampleTensor = tf2.constant(prediction)
-            print("Tensor = ",sampleTensor)
-            convertedArray = sampleTensor.eval(session=tf2.Session())
-            print("Array = ",convertedArray)
+            #tf2.disable_v2_behavior()
+            #sampleTensor = tf2.constant(prediction)
+            #print("Tensor = ",sampleTensor)
+            #convertedArray = sampleTensor.eval(session=tf2.Session())
+            #print("Array = ",convertedArray)
             
             
 
