@@ -21,7 +21,7 @@ def predictor(image):
     test_image = test_image / 255.0
     test_image = np.expand_dims(test_image, axis=0)
     predictions = model.predict(test_image)
-    scores = tf.nn.softmax(predictions[0])
+    scores = tf.nn.argmax(predictions[0])
     scores = scores.numpy()
     print(prediction)
     print(scores)
