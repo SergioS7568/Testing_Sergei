@@ -160,14 +160,15 @@ if uploaded_file is not None:
 
 
     if Genrate_pred:
-            
+           
             #img_reshape = img_reshape.astype('float32')        
             img_reshape = img_reshape.reshape(-1, 28, 28, 1)
             prediction = loaded_model.predict(img_reshape, batch_size=250 ).argmax()
+            
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
             
-            pred = tf.random_normal(prediction,dtype=tf.float32)
+            pred = tf.random.uniform(prediction,dtype=tf.float32)
             pprint(type(pred))
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
