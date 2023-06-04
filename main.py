@@ -12,8 +12,6 @@ import time
 
 st.title('Green stem Classifier')
 
-st.markdown("Prediction : (healthy  or  diseased)")
-
 def main():
     file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
     class_btn = st.button("Classify")
@@ -28,9 +26,7 @@ def main():
             with st.spinner('Model working....'):
                 # plt.imshow(image)
                 # plt.axis("off")
-
                 predictions = predict(image)
-
                 time.sleep(1)
                 st.success('Classified')
                 st.write(predictions)
@@ -50,7 +46,3 @@ def predict(image):
     scores = scores.numpy()
     result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
     return result
-  
-  
-  ## -----------------------------------------------------x---------------------------------------x--------------------------------------------##
-
