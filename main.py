@@ -166,8 +166,9 @@ if uploaded_file is not None:
             prediction = loaded_model.predict(img_reshape, batch_size=250 ).argmax()
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
             #pred = loaded_model.predict(img_reshape).argsort()[:5] 
-            prediction = prediction.shape
-            print(prediction)
+            
+            pred = tf.random_normal(prediction,dtype=tf.float32)
+            pprint(type(pred))
             #pred_class = classes[pred.argmax()]
             #plt.imshow(img_reshape)
             #plt.title(pred_class)
