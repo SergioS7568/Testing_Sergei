@@ -12,7 +12,6 @@ class_btn = st.button("Classify")
 loaded_model = tf.keras.models.load_model("saved_model/mdl_wts2.hdf5")
     
 def predictor(image):
-    classifier_model = loaded_model
     model = loaded_model(classifier_model)
     test_image = image.resize((200,200))
     test_image = preprocessing.image.img_to_array(test_image)
@@ -40,8 +39,6 @@ if file_uploaded is not None:
                 # plt.imshow(image)
                 # plt.axis("off")
                 predictions = predictor(image)
-                time.sleep(1)
-                st.success('Classified')
                 st.write(predictions)
                 
 
