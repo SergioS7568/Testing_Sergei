@@ -13,7 +13,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 
 loaded_model = tf.keras.models.load_model('saved_model/keras2.h5')
 ### load file
-uploaded_file = st.file_uploader("Choose a image file", type="jpg")
+uploaded_file = st.file_uploader("Choose a image file", type=['png', 'jpeg', 'jpg'])
 
 classes = ['aircraft carrier', 'airplane', 'alarm clock', 'ambulance', 'angel', 'ant', 'anvil', 'apple', 'asparagus', 'axe', 'backpack', 'banana', 'bandage', 'barn', 'baseball', 'baseball bat', 'basket', 'basketball', 'bat', 'beard', 'bed', 'bee', 'belt', 'bench', 'bicycle', 'binoculars', 'bird', 'birthday cake', 'book', 'boomerang', 'bottlecap', 'bowtie', 'bracelet', 'brain', 'bread', 'bridge', 'broccoli', 'broom', 'bucket', 'bulldozer', 'bus', 'butterfly', 'chandelier', 'church', 'clock', 'coffee cup', 'compass', 'computer', 'cookie', 'cooler', 'couch', 'cow', 'crab', 'crocodile', 'dog', 'dragon', 'garden hose', 'giraffe', 'goatee', 'grass', 'guitar', 'hamburger', 'hammer', 'hat', 'headphones', 'hospital', 'hot air balloon', 'hot dog', 'hourglass', 'mailbox', 'map', 'marker', 'microwave', 'monkey', 'owl', 'paintbrush', 'paint can', 'palm tree', 'paper clip', 'parachute', 'parrot', 'passport', 'power outlet', 'purse', 'rabbit', 'raccoon', 'radio', 'remote control', 'rhinoceros', 'rifle', 'river', 'roller coaster', 'rollerskates', 'sailboat', 'sandwich', 'saw', 'saxophone', 'stairs', 'star', 'steak', 'string bean', 'The Eiffel Tower', 'toothpaste', 'tornado', 'tractor', 'traffic light', 'train', 'violin', 'washing machine', 'watermelon', 'waterslide', 'whale', 'wine bottle']
 
@@ -145,23 +145,29 @@ map_dict = {0: ' aircraft carrier ',
 
 
 if uploaded_file is not None:
+    #st.image(uploaded_file)
     # Convert the file to an opencv image.
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    file_bytes = file_bytes[:,:,0]
+    #file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+    #file_bytes = file_bytes[:,:,0]
+    #uploaded_file = st.file_uploader("Upload Image")
+    image = Image.open(uploaded_file)
+    st.image(uploaded_file, caption='Input', use_column_width=True)
+    img_array = np.array(image)
+    img= cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
     #resized = cv2.resize(img,(28, 28))
-    Genrate_pred = st.button("Generate Prediction")
+    #Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)       
     #resized = mobilenet_v2_preprocess_input(resized)
     #img_reshape = resized[np.newaxis,...]
-    img = img.reshape(1,28, 28,3)
-    arr = np.array(img, dtype = 'float32')
-    arr = arr.reshape((28, 28))
-    arr = arr/255.0
+    #img = img.reshape(1,28, 28,3)
+    #arr = np.array(img, dtype = 'float32')
+    #arr = arr.reshape((28, 28))
+    #arr = arr/255.0
 
-    if Genrate_pred:
-            prediction = model.predict(arr)
-            print(prediction)
+    #if Genrate_pred:
+            #prediction = model.predict(arr)
+            #print(prediction)
             #img_reshape = img_reshape.astype('float32')        
             #img_reshape = img_reshape.reshape(-1, 28, 28, 3)
             #prediction =loaded_model.predict(img_reshape)
