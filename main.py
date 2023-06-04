@@ -160,9 +160,11 @@ if uploaded_file is not None:
             #pred = prediction.reshape(-1)
             pred = np.exp(prediction)
             print(pred)
+            print(pred.shape)
             #a = np.array(prediction)
             #b = np.dstack([a])
-            print(b.shape)
+            
+            #print(b.shape)
             #print(pred[5])
             #print(pred.argmax())
             #st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
