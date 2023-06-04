@@ -156,7 +156,7 @@ if uploaded_file is not None:
     #img_array = np.array(image)
     #img= cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
     #img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
-    img = keras.preprocessing.image.load_img(file_bytes, target_size=(32, 32), dtype = 'float32')
+    img = keras.preprocessing.image.load_img(file_bytes, target_size=(32, 32))
     img_array = keras.preprocessing.image.img_to_array(file_bytes)
     #img_array = tf.expand_dims(img_array, 0) # Create a batch
     #predictions = model.predict(img_array)
