@@ -7,8 +7,7 @@ import numpy as np
 st.title('Green stem Classifier')
 file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
 class_btn = st.button("Classify")
-
- def predictor(image):
+def predictor(image):
     classifier_model = "keras.h5"
     loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
     model = load_model(classifier_model)
