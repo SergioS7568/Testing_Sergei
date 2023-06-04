@@ -174,10 +174,10 @@ import tensorflow.compat.v1 as tf2
             #print(prediction)
             
             
-            tf.disable_v2_behavior()
-            sampleTensor = tf.constant(prediction)
+            tf2.disable_v2_behavior()
+            sampleTensor = tf2.constant(prediction)
             print("Tensor = ",sampleTensor)
-            convertedArray = sampleTensor.eval(session=tf.Session())
+            convertedArray = sampleTensor.eval(session=tf2.Session())
             print("Array = ",convertedArray)
             
             #print(prediction.shape)
