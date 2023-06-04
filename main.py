@@ -145,7 +145,6 @@ map_dict = {0: ' aircraft carrier ',
 111: ' whale ',
 112: ' wine bottle '}
 
-
 if uploaded_file is not None:
     st.image(uploaded_file)
     # Convert the file to an opencv image.
