@@ -4,7 +4,17 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
 
-def predictor(image):
+
+
+
+st.title('Green stem Classifier')
+file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
+class_btn = st.button("Classify")
+if file_uploaded is not None:    
+    image = Image.open(file_uploaded)
+    st.image(image, caption='Uploaded Image', use_column_width=True)
+    
+   def predictor(image):
     classifier_model = "keras.h5"
     loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
     model = load_model(classifier_model)
@@ -18,14 +28,6 @@ def predictor(image):
     scores = scores.numpy()
     result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
     return result
-
-
-st.title('Green stem Classifier')
-file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
-class_btn = st.button("Classify")
-if file_uploaded is not None:    
-    image = Image.open(file_uploaded)
-    st.image(image, caption='Uploaded Image', use_column_width=True)
         
     if class_btn:
         if file_uploaded is None:
