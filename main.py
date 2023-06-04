@@ -148,13 +148,14 @@ if uploaded_file is not None:
     # Convert the file to an opencv image.
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
+    img = img[:,:,0]
     #resized = cv2.resize(img,(28, 28))
     Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)
     #img_reshape = resized[np.newaxis,...]
     img = img.resize((28, 28))
     arr = np.array(img, dtype = 'float32')
-    arr = arr.reshape(-1,28, 28,3)
+    arr = arr.reshape(1,28, 28,3)
     arr = arr/255.0
 
     if Genrate_pred:
