@@ -23,8 +23,8 @@ if file_uploaded is not None:
                 time.sleep(1)
                 st.success('Classified')
                 st.write(predictions)
-
- def predictor(image):
+                
+def predictor(image):
     classifier_model = "keras.h5"
     loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
     model = load_model(classifier_model)
