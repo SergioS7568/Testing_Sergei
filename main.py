@@ -145,16 +145,21 @@ map_dict = {0: ' aircraft carrier ',
 
 
 if uploaded_file is not None:
-    #st.image(uploaded_file)
+    st.image(uploaded_file)
     # Convert the file to an opencv image.
-    #file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     #file_bytes = file_bytes[:,:,0]
     #uploaded_file = st.file_uploader("Upload Image")
     #image = Image.open(uploaded_file)
-    st.image(uploaded_file, caption='Input', use_column_width=True)
-    img_array = np.array(image)
-    img= cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
-    img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
+    #st.image(uploaded_file, caption='Input', use_column_width=True)
+    #img_array = np.array(image)
+    #img= cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
+    #img = cv2.cvtColor(file_bytes, cv2.COLOR_BGR2RGB)
+    #img = keras.preprocessing.image.load_img(path, target_size=(32, 32))
+    img_array = keras.preprocessing.image.img_to_array(file_bytes)
+    #img_array = tf.expand_dims(img_array, 0) # Create a batch
+    #predictions = model.predict(img_array)
+    #score = tf.nn.softmax(predictions[0])            
     #resized = cv2.resize(img,(28, 28))
     #Genrate_pred = st.button("Generate Prediction")
     #resized = mobilenet_v2_preprocess_input(resized)       
