@@ -13,7 +13,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 from tensorflow.keras.utils import img_to_array
 
 
-loaded_model = tf.keras.models.load_model('saved_model/keras.h5')
+loaded_model = tf.keras.models.load_model('saved_model/keras2.h5')
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type=['png', 'jpeg', 'jpg'])
 
