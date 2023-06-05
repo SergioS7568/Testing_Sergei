@@ -179,7 +179,7 @@ if uploaded_file is not None:
             print(score)
             print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(classes[np.argmax(score)], 100 * np.max(score)))
             print('Image after resizing to 28x28')
-            st.title(classes[np.argmax(score)])
+            st.title(classes[np.argmax(prediction)])
             #ax = plt.subplot(2, 4, i + 1)
             #plt.imshow(img)
             #ax.set_title(class_names[np.argmax(score)])
