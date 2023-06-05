@@ -176,10 +176,12 @@ if uploaded_file is not None:
             predictions = loaded_model.predict(img_array)  
             print(predictions) 
             score = tf.nn.softmax(predictions)
+
+            print(prediction)
             print(score)
             print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(classes[np.argmax(score)], 100 * np.max(score)))
             print('Image after resizing to 28x28')
-            st.title(classes[np.argmax(prediction)])
+            st.title(classes[np.argmax(score)])
             #ax = plt.subplot(2, 4, i + 1)
             #plt.imshow(img)
             #ax.set_title(class_names[np.argmax(score)])
