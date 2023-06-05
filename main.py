@@ -177,7 +177,7 @@ if uploaded_file is not None:
             print(predictions) 
             score = tf.nn.softmax(predictions)
 
-            print(prediction)
+            print(predictions)
             print(score)
             print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(classes[np.argmax(score)], 100 * np.max(score)))
             print('Image after resizing to 28x28')
