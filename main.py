@@ -13,7 +13,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2,preprocess_in
 from tensorflow.keras.utils import img_to_array
 
 
-loaded_model = tf.keras.models.load_model('saved_model/stroke_lstm_model_weights.best.hdf5')
+loaded_model = tf.keras.models.load_model('saved_model/thumb_cnn_model_weights.best.hdf5')
 ### load file
 uploaded_file = st.file_uploader("Choose a image file", type=['png', 'jpeg', 'jpg'])
 
