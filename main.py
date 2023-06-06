@@ -183,8 +183,8 @@ if uploaded_file is not None:
             img = cv2.resize(img, (28,28))
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
-            pred = tf.nn.sigmoid(loaded_model.predict(img_array))
-            print((-pred)[:5])
+            pred = tf.nn.sigmoid(loaded_model.predict(img_array)[0])
+            print(pred)
             
             
             
