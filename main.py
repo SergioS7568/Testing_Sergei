@@ -174,9 +174,9 @@ if uploaded_file is not None:
             #plt.imshow(tf.squeeze(img[0])) 
             pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
             print(pred)
-            #ind = (-pred).argsort()[:5]
-            #latex = [selection_chosen[x] for x in ind]
-            #print(latex)
+            ind = (-pred).argsort()[:5]
+            latex = [selection_chosen[x] for x in ind]
+            print(latex)
             #score = tf.nn.softmax(pred)
             #print(score)
             #img = cv2.resize(img, (28,28))
