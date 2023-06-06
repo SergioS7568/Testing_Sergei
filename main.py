@@ -183,9 +183,11 @@ if uploaded_file is not None:
             img = cv2.resize(img, (28,28))
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
-            pred = tf.nn.sigmoid(loaded_model.predict(img_array)[0])
+            pred = loaded_model.predict(img_array)
             score = tf.nn.softmax(pred[0])
             print(score)
+            test = tf.nn.sigmoid(score)
+            print(test)
             
             
             
