@@ -184,7 +184,7 @@ if uploaded_file is not None:
             #print(pred)
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
-            score = tf.nn.softmax(pred)
+            score = tf.nn.argmax(pred)
             print(score)
             #ind = (-pred).argsort()[:5]
             #latex = [selection_chosen[x] for x in ind]
