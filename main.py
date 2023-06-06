@@ -176,6 +176,8 @@ if uploaded_file is not None:
             ind = (-pred).argsort()[:5]
             latex = [classes[x] for x in ind]
             print(latex)
+            score = tf.nn.softmax(predictions)
+            print(score)
             #img = cv2.resize(img, (28,28))
             #img_array = image.img_to_array(img)
             #img_array = tf.expand_dims(img_array, 0) # Create a batch
