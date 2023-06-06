@@ -171,7 +171,7 @@ if uploaded_file is not None:
             img = img_normalized
             #img = file_bytes
             #plt.imshow(tf.squeeze(img[0])) 
-            pred = model.predict(np.expand_dims(img, axis=0))[0]
+            pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
             ind = (-pred).argsort()[:5]
             #latex = [class_names[x] for x in ind]
             #print(latex)
