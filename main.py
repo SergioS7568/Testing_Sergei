@@ -183,8 +183,9 @@ if uploaded_file is not None:
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
             predictions = loaded_model.predict(img_array)  
-            print(predictions) 
-            #score = tf.nn.softmax(predictions)
+            #print(predictions) 
+            score = tf.nn.softmax(predictions)
+            print(score)
             # Applying the ReLu function and
             # storing the result in 'b'
             #b = tf.nn.relu(pred, name ='ReLU')
