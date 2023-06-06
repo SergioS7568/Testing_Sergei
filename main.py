@@ -190,6 +190,7 @@ if uploaded_file is not None:
             pred = loaded_model.predict(img_array)
             predictions = tf.nn.sigmoid(pred)
             print(predictions)
+            print((-predictions).argsort()[:5])
             
             
             #predictions = loaded_model.predict(img_array)  
