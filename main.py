@@ -186,7 +186,7 @@ if uploaded_file is not None:
             #score = tf.nn.softmax(predictions)
             # Applying the ReLu function and
             # storing the result in 'b'
-            b = tf.nn.relu(a, name ='ReLU')
+            b = tf.nn.relu(pred, name ='ReLU')
   
             # Initiating a Tensorflow session
             with tf.Session() as sess:
