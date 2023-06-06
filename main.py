@@ -172,7 +172,7 @@ if uploaded_file is not None:
             img = cv2.resize(file_bytes, (28,28))
             #img = file_bytes
             #plt.imshow(tf.squeeze(img[0])) 
-            pred = loaded_model.predict(np.expand_dims(img, axis=0))
+            pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
             print(pred)
             #ind = (-pred).argsort()[:5]
             #latex = [selection_chosen[x] for x in ind]
