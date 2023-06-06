@@ -169,13 +169,18 @@ if uploaded_file is not None:
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
             #img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX)
             #img = img_normalized
-            img = file_bytes
-            img = cv2.resize(img, (28,28))
-            img_array = image.img_to_array(img)
-            img_array = tf.expand_dims(img_array, 0) # Create a batch
-            predictions = loaded_model.predict(img_array)  
-            print(predictions) 
-            score = tf.nn.softmax(predictions)
+            #img = file_bytes
+            plt.imshow(file_bytes.squeeze()) 
+            pred = model.predict(np.expand_dims(file_bytes, axis=0))[0]
+            ind = (-pred).argsort()[:5]
+            #latex = [class_names[x] for x in ind]
+            #print(latex)
+            #img = cv2.resize(img, (28,28))
+            #img_array = image.img_to_array(img)
+            #img_array = tf.expand_dims(img_array, 0) # Create a batch
+            #predictions = loaded_model.predict(img_array)  
+            #print(predictions) 
+            #score = tf.nn.softmax(predictions)
 
             print(predictions)
             print(score)
