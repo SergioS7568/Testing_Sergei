@@ -186,9 +186,9 @@ if uploaded_file is not None:
             #print(predictions) 
             #score = tf.nn.softmax(pred)
             #print(score)
-            #ind = (-pred).argsort()[:5]
-            #latex = [selection_chosen[x] for x in ind]
-            #print(latex)
+            ind = (-pred).argsort()[:5]
+            latex = [selection_chosen[x] for x in ind]
+            print(latex)
   
             # Initiating a Tensorflow session
             #with tf.Session() as sess:
