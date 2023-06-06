@@ -181,11 +181,11 @@ if uploaded_file is not None:
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
             pred = loaded_model.predict(img_array)
-            #print(pred)
+            print(pred)
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
-            score = tf.nn.argmax(pred)
-            print(score)
+            #score = tf.nn.softmax(pred)
+            #print(score)
             #ind = (-pred).argsort()[:5]
             #latex = [selection_chosen[x] for x in ind]
             #print(latex)
