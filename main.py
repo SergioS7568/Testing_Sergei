@@ -173,17 +173,24 @@ if uploaded_file is not None:
             #img = file_bytes
             #plt.imshow(tf.squeeze(img[0])) 
             pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
-            ind = (-pred).argsort()[:5]
-            latex = [selection_chosen[x] for x in ind]
-            print(latex)
-            score = tf.nn.softmax(pred)
-            print(score)
+            #ind = (-pred).argsort()[:5]
+            #latex = [selection_chosen[x] for x in ind]
+            #print(latex)
+            #score = tf.nn.softmax(pred)
+            #print(score)
             #img = cv2.resize(img, (28,28))
             #img_array = image.img_to_array(img)
             #img_array = tf.expand_dims(img_array, 0) # Create a batch
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
             #score = tf.nn.softmax(predictions)
+            # Applying the ReLu function and
+            # storing the result in 'b'
+            b = tf.nn.relu(a, name ='ReLU')
+  
+            # Initiating a Tensorflow session
+            with tf.Session() as sess:
+                        print(pred)
 
             #print(predictions)
             #print(score)
