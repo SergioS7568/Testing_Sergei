@@ -174,8 +174,8 @@ if uploaded_file is not None:
             #plt.imshow(tf.squeeze(img[0])) 
             pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
             ind = (-pred).argsort()[:5]
-            #latex = [class_names[x] for x in ind]
-            #print(latex)
+            latex = [classes[x] for x in ind]
+            print(latex)
             #img = cv2.resize(img, (28,28))
             #img_array = image.img_to_array(img)
             #img_array = tf.expand_dims(img_array, 0) # Create a batch
