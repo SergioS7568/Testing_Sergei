@@ -172,7 +172,8 @@ if uploaded_file is not None:
             img = cv2.resize(file_bytes, (28,28))
             #img = file_bytes
             #plt.imshow(tf.squeeze(img[0])) 
-            pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
+            pred = loaded_model.predict(np.expand_dims(img, axis=0))
+            print(pred)
             #ind = (-pred).argsort()[:5]
             #latex = [selection_chosen[x] for x in ind]
             #print(latex)
@@ -186,11 +187,11 @@ if uploaded_file is not None:
             #score = tf.nn.softmax(predictions)
             # Applying the ReLu function and
             # storing the result in 'b'
-            b = tf.nn.relu(pred, name ='ReLU')
+            #b = tf.nn.relu(pred, name ='ReLU')
   
             # Initiating a Tensorflow session
-            with tf.Session() as sess:
-                        print(pred)
+            #with tf.Session() as sess:
+                        #print(pred)
 
             #print(predictions)
             #print(score)
