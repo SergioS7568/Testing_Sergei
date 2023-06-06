@@ -180,7 +180,7 @@ if uploaded_file is not None:
             #img = cv2.resize(img, (28,28))
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
-            pred = loaded_model.predict(np.expand_dims(img_array, axis=1))
+            pred = loaded_model.predict(img_array)
             print(pred)
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
