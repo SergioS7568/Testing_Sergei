@@ -185,9 +185,9 @@ if uploaded_file is not None:
             img_array = tf.expand_dims(img_array, 0) # Create a batch
             pred = loaded_model.predict(img_array)
             score = tf.nn.softmax(pred[0])
-            print(score)
+            print(np.argmax(score))
             test = tf.nn.sigmoid(score)
-            print(test)
+            print(np.argmax(test))
             print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(selection_chosen[np.argmax(test)], 100 * np.max(test)))
             print('Image after resizing to 32x32')
             
