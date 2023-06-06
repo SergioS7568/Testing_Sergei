@@ -181,7 +181,13 @@ if uploaded_file is not None:
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
             pred = loaded_model.predict(img_array)[0]
-            print((-pred).argsort()[:5])
+            #print((-pred).argsort()[:5])
+            
+            #sigmoid
+            predictions = tf.nn.sigmoid(pred)
+            print(predictions)
+            
+            
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
             #score = tf.nn.softmax(pred)
