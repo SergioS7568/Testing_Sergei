@@ -18,7 +18,7 @@ loaded_model = tf.keras.models.load_model('saved_model/mdl_wtv3.hdf5')
 uploaded_file = st.file_uploader("Choose a image file", type=['png', 'jpeg', 'jpg'])
 
 classes = ['aircraft carrier', 'airplane', 'alarm clock', 'ambulance', 'angel', 'ant', 'anvil', 'apple', 'asparagus', 'axe', 'backpack', 'banana', 'bandage', 'barn', 'baseball', 'baseball bat', 'basket', 'basketball', 'bat', 'beard', 'bed', 'bee', 'belt', 'bench', 'bicycle', 'binoculars', 'bird', 'birthday cake', 'book', 'boomerang', 'bottlecap', 'bowtie', 'bracelet', 'brain', 'bread', 'bridge', 'broccoli', 'broom', 'bucket', 'bulldozer', 'bus', 'butterfly', 'chandelier', 'church', 'clock', 'coffee cup', 'compass', 'computer', 'cookie', 'cooler', 'couch', 'cow', 'crab', 'crocodile', 'dog', 'dragon', 'garden hose', 'giraffe', 'goatee', 'grass', 'guitar', 'hamburger', 'hammer', 'hat', 'headphones', 'hospital', 'hot air balloon', 'hot dog', 'hourglass', 'mailbox', 'map', 'marker', 'microwave', 'monkey', 'owl', 'paintbrush', 'paint can', 'palm tree', 'paper clip', 'parachute', 'parrot', 'passport', 'power outlet', 'purse', 'rabbit', 'raccoon', 'radio', 'remote control', 'rhinoceros', 'rifle', 'river', 'roller coaster', 'rollerskates', 'sailboat', 'sandwich', 'saw', 'saxophone', 'stairs', 'star', 'steak', 'string bean', 'The Eiffel Tower', 'toothpaste', 'tornado', 'tractor', 'traffic light', 'train', 'violin', 'washing machine', 'watermelon', 'waterslide', 'whale', 'wine bottle']
-
+selection_chosen = ['airplane', 'clock', 'ambulance', 'anvil', 'arm', 'backpack', 'bandage', 'barn', 'baseball', 'baseball bat', 'basket', 'basketball', 'bathtub', 'beach', 'belt', 'bicycle', 'binoculars', 'book', 'bowtie', 'bracelet', 'brain', 'bridge', 'broom', 'bucket', 'bulldozer', 'bus', 'cactus', 'calculator', 'calendar', 'camera', 'campfire', 'candle', 'canoe', 'car', 'castle', 'cat', 'cello', 'cell phone', 'chair', 'church', 'clarinet', 'clock', 'coffee cup', 'compass', 'computer', 'cookie', 'cooler', 'crayon', 'crown', 'cruise ship', 'diamond', 'dishwasher', 'dog', 'dresser', 'drill', 'drums', 'dumbbell', 'ear', 'envelope', 'eraser', 'eye', 'eyeglasses', 'face', 'fan', 'feather', 'flashlight', 'floor lamp', 'garden', 'garden hose', 'guitar', 'hammer', 'harp', 'headphones', 'helicopter', 'hockey stick', 'horse', 'hospital', 'hourglass', 'house', 'jacket', 'keyboard', 'lantern', 'laptop', 'light bulb', 'mailbox', 'map', 'marker', 'matches', 'megaphone', 'microphone', 'microwave', 'moon', 'mosquito', 'mountain', 'mouse', 'mug', 'parachute', 'passport', 'pencil', 'piano', 'postcard', 'purse', 'radio', 'rake', 'remote control', 'sailboat', 'saw', 'school bus', 'scissors', 'screwdriver', 'snorkel', 'snowman', 'stereo', 'stove', 'stethoscope', 'syring', 'telephone', 'tennis racquet', 'tractor', 'trombone', 'trumpet', 'windmill']
 
 map_dict2 = {0: 'dog',
             1: 'horse',
@@ -174,7 +174,7 @@ if uploaded_file is not None:
             #plt.imshow(tf.squeeze(img[0])) 
             pred = loaded_model.predict(np.expand_dims(img, axis=0))[0]
             ind = (-pred).argsort()[:5]
-            latex = [classes[x] for x in ind]
+            latex = [selection_chosen[x] for x in ind]
             print(latex)
             score = tf.nn.softmax(pred)
             print(score)
