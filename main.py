@@ -167,11 +167,11 @@ if uploaded_file is not None:
 
     if Genrate_pred:
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-            #img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX)
-            #img = img_normalized
+            img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX)
+            img = img_normalized
             #img = file_bytes
-            plt.imshow(file_bytes.squeeze()) 
-            pred = model.predict(np.expand_dims(file_bytes, axis=0))[0]
+            plt.imshow(img.squeeze()) 
+            pred = model.predict(np.expand_dims(img, axis=0))[0]
             ind = (-pred).argsort()[:5]
             #latex = [class_names[x] for x in ind]
             #print(latex)
