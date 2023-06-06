@@ -169,8 +169,7 @@ if uploaded_file is not None:
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
             #img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX)
             #img = img_normalized
-            img = file_bytes
-            img = cv2.resize(img, (28,28))
+            
             #plt.imshow(tf.squeeze(img[0])) 
             #ind = (-pred).argsort()[:5]
             #latex = [selection_chosen[x] for x in ind]
@@ -178,12 +177,17 @@ if uploaded_file is not None:
             #score = tf.nn.softmax(pred)
             #print(score)
             #img = cv2.resize(img, (28,28))
+            
+            
+            img = file_bytes
+            img = cv2.resize(img, (28,28))
             img_array = image.img_to_array(img)
             img_array = tf.expand_dims(img_array, 0) # Create a batch
-            pred = loaded_model.predict(img_array)[0]
+            #pred = loaded_model.predict(img_array)[0]
             #print((-pred).argsort()[:5])
             
             #sigmoid
+            pred = loaded_model.predict(img_array)
             predictions = tf.nn.sigmoid(pred)
             print(predictions)
             
