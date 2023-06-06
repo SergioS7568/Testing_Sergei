@@ -170,7 +170,7 @@ if uploaded_file is not None:
             img_normalized = cv2.normalize(file_bytes, None, 0, 1.0, cv2.NORM_MINMAX)
             img = img_normalized
             #img = file_bytes
-            plt.imshow(img.squeeze()) 
+            plt.imshow(tf.squeeze(img[0])) 
             pred = model.predict(np.expand_dims(img, axis=0))[0]
             ind = (-pred).argsort()[:5]
             #latex = [class_names[x] for x in ind]
@@ -182,11 +182,11 @@ if uploaded_file is not None:
             #print(predictions) 
             #score = tf.nn.softmax(predictions)
 
-            print(predictions)
-            print(score)
-            print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(classes[np.argmax(score)], 100 * np.max(score)))
-            print('Image after resizing to 28x28')
-            st.title(classes[np.argmax(score)])
+            #print(predictions)
+            #print(score)
+            #print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(classes[np.argmax(score)], 100 * np.max(score)))
+            #print('Image after resizing to 28x28')
+            #st.title(classes[np.argmax(score)])
             #ax = plt.subplot(2, 4, i + 1)
             #plt.imshow(img)
             #ax.set_title(class_names[np.argmax(score)])
