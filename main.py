@@ -188,6 +188,8 @@ if uploaded_file is not None:
             print(score)
             test = tf.nn.sigmoid(score)
             print(test)
+            print("This image most likely belongs to {} with a {:.2f} percent confidence.".format(selection_chosen[np.argmax(test)], 100 * np.max(test)))
+            print('Image after resizing to 32x32')
             
             
             
