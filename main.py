@@ -184,8 +184,11 @@ if uploaded_file is not None:
             print(pred)
             #predictions = loaded_model.predict(img_array)  
             #print(predictions) 
-            score = tf.nn.softmax(pred)
-            print(score)
+            #score = tf.nn.softmax(pred)
+            #print(score)
+            ind = (-pred).argsort()[:5]
+            latex = [selection_chosen[x] for x in ind]
+            print(latex)
             # Applying the ReLu function and
             # storing the result in 'b'
             #b = tf.nn.relu(pred, name ='ReLU')
