@@ -39,3 +39,4 @@ if uploaded_file is not None:
 
     # Display the uploaded image
     st.image(img, caption='Uploaded Image', use_column_width=True)
+    
