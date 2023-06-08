@@ -24,7 +24,7 @@ if uploaded_file is not None:
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     # Resize the image to 28x28 or any desired size
-    img = cv2.resize(img, (28, 28))
+    img = cv2.resize(img, (244, 244))
   
     
     
@@ -38,7 +38,7 @@ if uploaded_file is not None:
         
         return reshaped
     
-    #img = preprocess_img(img)
+    img = preprocess_img(img)
     
     # Perform the prediction
     pred = model.predict(np.expand_dims(img, axis=0))[0]
