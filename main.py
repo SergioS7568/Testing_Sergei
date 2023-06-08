@@ -55,7 +55,7 @@ if uploaded_file is not None:
         st.write(f'{top_classes[i]}: {top_probabilities[i]*100:.2f}%')
 
     # Display the uploaded image
-    st.image(img, caption='Uploaded Image', use_column_width=True)
-    st.image(img2, caption='Uploaded Image', use_column_width=True)
-    st.image(img3, caption='Uploaded Image', use_column_width=True)
-    st.image(img4, caption='Uploaded Image', use_column_width=True)
+    st.image(img, caption='Uploaded Image 1', use_column_width=True)
+    st.image(img2, caption='Uploaded Image 2', use_column_width=True)
+    st.image(img3, caption='Uploaded Image 3', use_column_width=True)
+    st.image(img4, caption='Uploaded Image 4', use_column_width=True)
