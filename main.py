@@ -11,7 +11,7 @@ class_names = ['aircraft carrier', 'airplane', 'alarm clock', 'ambulance', 'ange
 
 # Create Streamlit app
 st.title('Image Classification')
-
+print(model.input_shape)
 # File uploader widget
 uploaded_file = st.file_uploader('Choose an image', type=['jpg', 'jpeg', 'png'])
 
