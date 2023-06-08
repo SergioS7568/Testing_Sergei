@@ -25,7 +25,7 @@ if uploaded_file is not None:
     img2 = img
     # Resize the image to 28x28 or any desired size
     img = imutils.resize(img, width=28, height=28)
-     img3 = img
+    img3 = img
     img = cv2.resize(img, (28, 28))
     img4 = img
     
