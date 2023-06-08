@@ -25,7 +25,7 @@ if uploaded_file is not None:
   
     # Preprocess the image
     #img = preprocess_image(img)  # Modify this function based on your preprocessing requirements
-    img = img.reshape(None, 28, 28, 1)
+    img = img.reshape(387200, 28, 28, 1)
 
     # Perform the prediction
     pred = model.predict(np.expand_dims(img, axis=0))[0]
