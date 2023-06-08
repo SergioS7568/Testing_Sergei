@@ -2,6 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
+import imutils
 from keras.models import load_model
 
 # Load your trained model and define class names
