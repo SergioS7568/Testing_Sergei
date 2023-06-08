@@ -25,7 +25,7 @@ if uploaded_file is not None:
   
     # Preprocess the image
     #img = preprocess_image(img)  # Modify this function based on your preprocessing requirements
-    img = img.reshape(28, 28, 1)
+    img = img.reshape(28, 28)
    
 
     # Perform the prediction
