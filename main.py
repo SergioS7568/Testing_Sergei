@@ -22,10 +22,10 @@ uploaded_file = st.file_uploader('Choose an image', type=['jpg', 'jpeg', 'png'])
 if uploaded_file is not None:
     img = cv2.imdecode(np.fromstring(uploaded_file.read(), np.uint8), 1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
+    img2 = img
     # Resize the image to 28x28 or any desired size
     img = cv2.resize(img, (28, 28))
-  
+    img3 = img
     
     
     # Preprocess the image
@@ -53,4 +53,6 @@ if uploaded_file is not None:
 
     # Display the uploaded image
     st.image(img, caption='Uploaded Image', use_column_width=True)
+    st.image(img2, caption='Uploaded Image', use_column_width=True)
+    st.image(img3, caption='Uploaded Image', use_column_width=True)
     
