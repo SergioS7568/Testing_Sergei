@@ -23,11 +23,18 @@ if uploaded_file is not None:
     # Resize the image to 28x28 or any desired size
     img = cv2.resize(img, (28, 28))
   
+    
+    
     # Preprocess the image
     #img = preprocess_image(img)  # Modify this function based on your preprocessing requirements
-    #img = img.reshape(28, 28)
-   
-
+    def preprocess_img(img):
+        normalized = gray / 255.0
+        reshaped = normalized.reshape(28,28,1)
+        
+        return reshaped
+    
+    preprocess_img(img)
+    
     # Perform the prediction
     pred = model.predict(np.expand_dims(img, axis=0))[0]
     ind = (-pred).argsort()[:5]
