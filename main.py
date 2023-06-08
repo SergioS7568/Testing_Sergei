@@ -24,7 +24,7 @@ if uploaded_file is not None:
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img2 = img
     # Resize the image to 28x28 or any desired size
-    img = crop_square(img, 28)
+    img = imutils.resize(img, width=28, height=28)
      img3 = img
     img = cv2.resize(img, (28, 28))
     img4 = img
