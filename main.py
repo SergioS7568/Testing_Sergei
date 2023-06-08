@@ -40,8 +40,8 @@ if uploaded_file is not None:
     img = preprocess_img(img)
     
     # Perform the prediction
-    pred = model.predict(np.expand_dims(img, axis=0))
-    ind = (-pred).argsort()[:5]
+    pred = model.predict(np.expand_dims(img, axis=0))[0]
+    ind = (-pred).argsort()[:10]
     top_classes = [class_names[i] for i in ind]
     top_probabilities = pred[ind]
 
