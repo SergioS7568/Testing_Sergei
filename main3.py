@@ -12,7 +12,7 @@ file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
 class_btn = st.button("Classify")
 
 
-loaded_model = tf.keras.models.load_model("saved_model/mdl_wts2.hdf5")
+loaded_model = tf.keras.models.load_model("saved_model/sopa.hdf5")
     
 def predictor(image):
     model = loaded_model
