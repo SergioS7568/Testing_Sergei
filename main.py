@@ -18,7 +18,7 @@ uploaded_file = st.file_uploader('Choose an image', type=['jpg', 'jpeg', 'png'])
 # Process the uploaded image
 if uploaded_file is not None:
     img = cv2.imdecode(np.fromstring(uploaded_file.read(), np.uint8), 1)
-    img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     # Resize the image to 28x28 or any desired size
     img = cv2.resize(img, (28, 28))
@@ -29,7 +29,7 @@ if uploaded_file is not None:
     #img = preprocess_image(img)  # Modify this function based on your preprocessing requirements
     def preprocess_img(img):
         #COLOR_RGB2GRAY
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         normalized = gray /255.0
         reshaped = normalized.reshape(28,28,1).astype('float32')
         
