@@ -38,7 +38,7 @@ if uploaded_file is not None:
         
         return reshaped
     
-    img = preprocess_img(img)
+    #img = preprocess_img(img)
     
     # Perform the prediction
     pred = model.predict(np.expand_dims(img, axis=0))[0]
