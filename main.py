@@ -29,7 +29,7 @@ if uploaded_file is not None:
     #img = preprocess_image(img)  # Modify this function based on your preprocessing requirements
     def preprocess_img(img):
         #COLOR_RGB2GRAY
-        gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         normalized = gray /255.0
         reshaped = normalized.reshape(28,28,1).astype('float32')
         
