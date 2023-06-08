@@ -2,6 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
+from keras.models import load_model
 
 # Load your trained model and define class names
 model = model.load_model('saved_model/mdl_wts2.hdf5')
